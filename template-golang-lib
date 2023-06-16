@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #temple url
-temple_url="https://github.com/bridgewwater/temp-golang-base.git"
+temple_url="https://github.com/bridgewwater/template-golang-lib.git"
 temple_repo_host="github.com"
 temple_group="bridgewwater"
 temple_name="temp-golang-base"
@@ -261,10 +261,10 @@ replaceFileByRegular ${new_project}/README.md ${temple_repo_host} ${new_repo_hos
 replaceFileByRegular ${new_project}/README.md ${temple_name} ${new_project}
 replaceFileByRegular ${new_project}/docker-compose.yml ${temple_name} ${new_project}
 replaceFileByRegular ${new_project}/Makefile ${temple_name} ${new_project}
-replaceFileByRegular ${new_project}/MakeGoDist.mk ${temple_name} ${new_project}
-replaceFileByRegular ${new_project}/MakeDocker.mk ${temple_group} ${new_repo_group}
-replaceFileByRegular ${new_project}/package.json ${temple_group}\/${temple_name} ${new_repo_group}\/${new_project}
-replaceFileByRegular ${new_project}/package.json ${temple_name} ${new_project}
+replaceFileByRegular ${new_project}/**/*.mk ${temple_name} ${new_project}
+replaceFileByRegular ${new_project}/**/*.mk ${temple_group} ${new_repo_group}
+# replaceFileByRegular ${new_project}/package.json ${temple_group}\/${temple_name} ${new_repo_group}\/${new_project}
+# replaceFileByRegular ${new_project}/package.json ${temple_name} ${new_project}
 # replace code at folder
 findFileReplaceByRegular ${new_project} "*.go" ${temple_repo_host}\/${temple_group}\/${temple_name} ${new_repo_host}\/${new_repo_group}\/${new_project}
 findFileReplaceByRegular ${new_project} "*.go" ${temple_group} ${new_repo_group}
