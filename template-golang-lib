@@ -4,7 +4,7 @@
 temple_url="https://github.com/bridgewwater/template-golang-lib.git"
 temple_repo_host="github.com"
 temple_group="bridgewwater"
-temple_name="temp-golang-base"
+temple_name="template-golang-lib"
 temple_branch="main"
 
 new_repo_host=${temple_repo_host}
