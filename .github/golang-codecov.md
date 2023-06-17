@@ -1,3 +1,8 @@
+## install github app
+
+- [https://github.com/apps/codecov/installations/new](https://github.com/apps/codecov/installations/new)
+- add `CODECOV_TOKEN` to action secrets
+
 ## config-file
 
 `golang-codecov.yml`
@@ -13,7 +18,7 @@ on:
 
 jobs:
   golang-codecov:
-    name: glang-codecov
+    name: golang-codecov
     strategy:
       matrix:
         go:
