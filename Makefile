@@ -24,10 +24,10 @@ ENV_RUN_INFO_ARGS=
 
 ## build dist env start
 # change to other build entrance
-ENV_ROOT_BUILD_ENTRANCE = main.go
-ENV_ROOT_BUILD_BIN_NAME = ${ROOT_NAME}
-ENV_ROOT_BUILD_PATH = build
-ENV_ROOT_BUILD_BIN_PATH = ${ENV_ROOT_BUILD_PATH}/${ENV_ROOT_BUILD_BIN_NAME}
+ENV_ROOT_BUILD_ENTRANCE=main.go
+ENV_ROOT_BUILD_BIN_NAME=${ROOT_NAME}
+ENV_ROOT_BUILD_PATH=build
+ENV_ROOT_BUILD_BIN_PATH=${ENV_ROOT_BUILD_PATH}/${ENV_ROOT_BUILD_BIN_NAME}
 ENV_ROOT_LOG_PATH=logs/
 # linux windows darwin  list as: go tool dist list
 ENV_DIST_GO_OS=linux
@@ -42,7 +42,7 @@ ENV_ROOT_CHANGELOG_PATH?=CHANGELOG.md
 ## go test MakeGoTest.mk start
 # ignore used not matching mode
 # set ignore of test case like grep -v -E "vendor|go_fatal_error" to ignore vendor and go_fatal_error package
-ENV_ROOT_TEST_INVERT_MATCH ?= "vendor|go_fatal_error|robotn|shirou|go_robot"
+ENV_ROOT_TEST_INVERT_MATCH?="vendor|go_fatal_error|robotn|shirou|go_robot"
 ifeq ($(OS),Windows_NT)
 ENV_ROOT_TEST_LIST?=./...
 else
@@ -53,7 +53,7 @@ ENV_ROOT_TEST_MAX_TIME:=1m
 ## go test MakeGoTest.mk end
 
 include z-MakefileUtils/MakeBasicEnv.mk
-include z-MakefileUtils/MakeDistTools.mk
+include z-MakefileUtils/MakeDistTools.mkd
 include z-MakefileUtils/MakeGoMod.mk
 include z-MakefileUtils/MakeGoTest.mk
 include z-MakefileUtils/MakeGoDist.mk
