@@ -46,29 +46,29 @@ $ echo "go mod vendor"
 # dev
 
 ```bash
-make init dep
+$ make init dep
 ```
 
 - test code
 
 ```bash
-make test
+$ make test testBenchmark
 ```
 
 add main.go file and run
 
 ```bash
 # run at env dev
-make dev
+$ make dev
 
 # run at env ordinary
-make run
+$ make run
 ```
 
 - ci to fast check
 
 ```bash
-make ci
+$ make ci
 ```
 
 ## docker

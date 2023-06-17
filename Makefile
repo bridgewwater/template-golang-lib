@@ -122,6 +122,8 @@ init:
 dep: modVerify modDownload modTidy modVendor
 	@echo "-> just check depends below"
 
+style: modTidy modVerify modFmt modLintRun
+
 ci: modTidy modVerify modFmt modVet modLintRun test
 
 cloc:
@@ -142,6 +144,7 @@ helpProjectRoot:
 	@echo "~> make testCoverageBrowser - see coverage at browser --invert-match by config"
 	@echo "~> make testBenchmark       - run go test benchmark case all"
 	@echo "~> make ci                  - run CI tools tasks"
+	@echo "~> make style               - run local code fmt and style check"
 	@echo "~> make dev                 - run as develop mode"
 	@echo "~> make run                 - run as ordinary mode"
 
