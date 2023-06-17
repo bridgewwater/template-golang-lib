@@ -66,9 +66,5 @@ jobs:
       - name: Run test benchmark
         run: go test -benchmem -bench . ./...
 
-    #  - name: Codecov
-    #    uses: codecov/codecov-action@v3.1.1
-    #    with:
-    #      token: ${{secrets.CODECOV_TOKEN}}
-    #      files: coverage.txt
-    #     #  verbose: true
+      - name: Run test coverage
+        run: go test -cover -coverprofile coverage.txt -covermode count -tags test -coverpkg ./... -v ./...
