@@ -53,7 +53,7 @@ ENV_ROOT_TEST_MAX_TIME:=1m
 ## go test MakeGoTest.mk end
 
 include z-MakefileUtils/MakeBasicEnv.mk
-include z-MakefileUtils/MakeDistTools.mkd
+include z-MakefileUtils/MakeDistTools.mk
 include z-MakefileUtils/MakeGoMod.mk
 include z-MakefileUtils/MakeGoTest.mk
 include z-MakefileUtils/MakeGoDist.mk
