@@ -61,7 +61,20 @@ steps:
     when:
       event:
         - push
-  - name: notification-feishu-group-robot
+  - name: go-test-benchmark
+    image: golang:1.17.13-buster
+    pull: if-not-exists
+    volumes:
+      - name: go_cache
+        path: /go
+    environment:
+      GOPATH: /go
+    commands:
+      - go test -run none -bench . -benchmem -v ./...
+    when:
+      event:
+        - push
+  - name: notification-failure-feishu-group-robot
     image: sinlov/drone-feishu-group-robot:1.11.0-alpine
     pull: if-not-exists
     settings:
