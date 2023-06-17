@@ -90,7 +90,7 @@ $ make helpDocker
 
 ### cli tools to init project fast
 
-```
+```bash
 $ curl -L --fail https://raw.githubusercontent.com/bridgewwater/template-golang-lib/main/template-golang-lib
 # let template-golang-lib file folder under $PATH
 $ chmod +x template-golang-lib
