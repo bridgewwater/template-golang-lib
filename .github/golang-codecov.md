@@ -12,9 +12,11 @@ name: golang-codecov
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    tags:
+      - '*' # Push events to matching *, i.e. 1.0.0 v1.0, v20.15.10
+
+permissions:
+  contents: write
 
 jobs:
   golang-codecov:
