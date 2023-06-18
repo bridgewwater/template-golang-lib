@@ -40,6 +40,11 @@ $ echo "go mod edit -require=$(go list -mod=readonly -m -versions github.com/bri
 $ echo "go mod vendor"
 ```
 
+## Features
+
+- [ ] more perfect test case coverage
+- [ ] more perfect benchmark case
+
 ## evn
 
 - golang sdk 1.17+
@@ -50,9 +55,15 @@ $ echo "go mod vendor"
 |:------------------------------------|:--------|
 | https://github.com/stretchr/testify | v1.8.4  |
 
+## usage
+
+- use to replace
+  `bridgewwater/template-golang-lib` to you code
+
 # dev
 
 ```bash
+# It needs to be executed after the first use or update of dependencies.
 $ make init dep
 ```
 
@@ -65,16 +76,17 @@ $ make test testBenchmark
 add main.go file and run
 
 ```bash
-# run at env dev
+# run at env dev use cmd/main.go
 $ make dev
-
-# run at env ordinary
-$ make run
 ```
 
 - ci to fast check
 
 ```bash
+# check style at local
+$ make style
+
+# run ci at local
 $ make ci
 ```
 
@@ -89,11 +101,6 @@ $ make dockerTestPruneLatest
 # more info see
 $ make helpDocker
 ```
-
-## use
-
-- use to replace
-  `bridgewwater/template-golang-lib` to you code
 
 ### cli tools to init project fast
 
