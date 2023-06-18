@@ -14,7 +14,9 @@ jobs:
     name: glang-ci
     strategy:
       matrix:
-        go: ['^1.17', '1.17.13']
+        go:
+         - '^1.17'
+         - '1.17.13'
         os:
           - macos-latest
           - windows-latest

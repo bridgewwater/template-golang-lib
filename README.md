@@ -47,7 +47,7 @@ $ echo "go mod vendor"
 
 ## evn
 
-- golang sdk: go 1.17
+- minimum go version: go 1.17
 
 ### libs
 
