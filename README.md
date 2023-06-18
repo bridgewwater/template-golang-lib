@@ -1,5 +1,6 @@
 [![golang-ci](https://github.com/bridgewwater/template-golang-lib/actions/workflows/golang-ci.yml/badge.svg)](https://github.com/bridgewwater/template-golang-lib/actions/workflows/golang-ci.yml)
 [![TravisBuildStatus](https://api.travis-ci.com/bridgewwater/template-golang-lib.svg?branch=main)](https://travis-ci.com/bridgewwater/template-golang-lib)
+[![license](https://img.shields.io/github/license/bridgewwater/template-golang-lib)](https://github.com/bridgewwater/template-golang-lib)
 [![go mod version](https://img.shields.io/github/go-mod/go-version/bridgewwater/template-golang-lib?label=go.mod)](https://github.com/bridgewwater/template-golang-lib)
 [![GoDoc](https://godoc.org/github.com/bridgewwater/template-golang-lib?status.png)](https://godoc.org/github.com/bridgewwater/template-golang-lib/)
 [![GoReportCard](https://goreportcard.com/badge/github.com/bridgewwater/template-golang-lib)](https://goreportcard.com/report/github.com/bridgewwater/template-golang-lib)
