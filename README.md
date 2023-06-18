@@ -43,6 +43,12 @@ $ echo "go mod vendor"
 
 - golang sdk 1.17+
 
+### libs
+
+| lib                                 | version |
+|:------------------------------------|:--------|
+| https://github.com/stretchr/testify | v1.8.4  |
+
 # dev
 
 ```bash

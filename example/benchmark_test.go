@@ -35,10 +35,10 @@ func demoCunt() bool {
 }
 
 func BenchmarkExampleTimer(b *testing.B) {
-	// reset counter
-	b.ResetTimer()
 	// mock ExampleTimer
 
+	// reset counter
+	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
 		// do ExampleTimer
 		flag := demoCunt()

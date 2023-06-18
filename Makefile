@@ -24,7 +24,7 @@ ENV_RUN_INFO_ARGS=
 
 ## build dist env start
 # change to other build entrance
-ENV_ROOT_BUILD_ENTRANCE=main.go
+ENV_ROOT_BUILD_ENTRANCE=cmd/main.go
 ENV_ROOT_BUILD_BIN_NAME=${ROOT_NAME}
 ENV_ROOT_BUILD_PATH=build
 ENV_ROOT_BUILD_BIN_PATH=${ENV_ROOT_BUILD_PATH}/${ENV_ROOT_BUILD_BIN_NAME}
@@ -126,6 +126,24 @@ style: modTidy modVerify modFmt modLintRun
 
 ci: modTidy modVerify modFmt modVet modLintRun test
 
+buildMain:
+	@echo "-> start build local OS"
+ifeq ($(OS),Windows_NT)
+	@go build -o $(subst /,\,${ENV_ROOT_BUILD_BIN_PATH}).exe ${ENV_ROOT_BUILD_ENTRANCE}
+	@echo "-> finish build out path: $(subst /,\,${ENV_ROOT_BUILD_BIN_PATH}).exe"
+else
+	@go build -o ${ENV_ROOT_BUILD_BIN_PATH} ${ENV_ROOT_BUILD_ENTRANCE}
+	@echo "-> finish build out path: ${ENV_ROOT_BUILD_BIN_PATH}"
+endif
+
+dev: export ENV_WEB_AUTO_HOST=true
+dev: cleanBuild buildMain
+ifeq ($(OS),windows)
+	$(subst /,\,${ENV_ROOT_BUILD_BIN_PATH}).exe ${ENV_RUN_INFO_ARGS}
+else
+	${ENV_ROOT_BUILD_BIN_PATH} ${ENV_RUN_INFO_ARGS}
+endif
+
 cloc:
 	@echo "see: https://stackoverflow.com/questions/26152014/cloc-ignore-exclude-list-file-clocignore"
 	cloc --exclude-list-file=.clocignore .
@@ -146,7 +164,6 @@ helpProjectRoot:
 	@echo "~> make ci                  - run CI tools tasks"
 	@echo "~> make style               - run local code fmt and style check"
 	@echo "~> make dev                 - run as develop mode"
-	@echo "~> make run                 - run as ordinary mode"
 
 help: helpGoMod helperGoTest helpDocker helpDist helpProjectRoot
 	@echo ""
