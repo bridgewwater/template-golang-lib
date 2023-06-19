@@ -151,6 +151,16 @@ cloc:
 
 helpProjectRoot:
 	@echo "Help: Project root Makefile"
+ifeq ($(OS),Windows_NT)
+	@echo ""
+	@echo "windows use this kit must install"
+	@echo "https://scoop.sh/#/apps?q=busybox&s=0&d=1&o=true"
+	@echo "-> scoop install main/busybox "
+	@echo "and"
+	@echo "https://scoop.sh/#/apps?q=shasum&s=0&d=1&o=true"
+	@echo "-> scoop install main/shasum "
+	@echo ""
+endif
 	@echo "-- now build name: ${ROOT_NAME} version: ${ENV_DIST_VERSION}"
 	@echo "-- distTestOS or distReleaseOS will out abi as: ${ENV_DIST_GO_OS} ${ENV_DIST_GO_ARCH} --"
 	@echo ""
@@ -167,14 +177,5 @@ helpProjectRoot:
 	@echo "~> make dev                 - run as develop mode"
 
 help: helpGoMod helpGoTest helpDocker helpGoDist helpProjectRoot
-ifeq ($(OS),Windows_NT)
-	@echo ""
-	@echo "windows use this kit must install"
-	@echo "https://scoop.sh/#/apps?q=gow&s=0&d=1&o=true"
-	@echo "scoop install gow"
-	@echo "and"
-	@echo "https://scoop.sh/#/apps?q=busybox&s=0&d=1&o=true"
-	@echo "# scoop install shasum"
-endif
 	@echo ""
 	@echo "-- more info see Makefile include: MakeGoMod.mk MakeGoTest.mk MakeGoDist.mk MakeDocker.mk --"

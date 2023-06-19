@@ -5,10 +5,10 @@
 # must as some include MakeDistTools.mk
 #
 # windows use must install tools
-# https://scoop.sh/#/apps?q=gow&s=0&d=1&o=true
-# scoop install gow
 # https://scoop.sh/#/apps?q=busybox&s=0&d=1&o=true
-# scoop install shasum
+# scoop install main/busybox
+# https://scoop.sh/#/apps?q=shasum&s=0&d=1&o=true
+# scoop install main/shasum
 #
 # ENV_ROOT_BUILD_BIN_NAME for set go binary file name
 # ENV_DIST_VERSION for set dist version name
