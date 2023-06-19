@@ -47,6 +47,9 @@ steps:
       event:
         - push
   - name: go-test
+    depends_on: # https://docs.drone.io/pipeline/exec/syntax/parallelism/
+      - go-init
+
     image: golang:1.17.13-buster
     pull: if-not-exists
     volumes:
@@ -62,6 +65,9 @@ steps:
       event:
         - push
   - name: go-test-benchmark
+    depends_on: # https://docs.drone.io/pipeline/exec/syntax/parallelism/
+      - go-test
+
     image: golang:1.17.13-buster
     pull: if-not-exists
     volumes:
@@ -75,6 +81,12 @@ steps:
       event:
         - push
   - name: notification-failure-feishu-group-robot
+    depends_on: # https://docs.drone.io/pipeline/exec/syntax/parallelism/
+      - env-init
+      - go-init
+      - go-test
+      - go-test-benchmark
+
     image: sinlov/drone-feishu-group-robot:1.11.0-alpine
     pull: if-not-exists
     settings:
