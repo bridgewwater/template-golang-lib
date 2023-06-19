@@ -45,7 +45,7 @@ modVerify:
 	@go mod verify
 
 modTidy:
-	@go mod tidy -x -v
+	@go mod tidy -v
 
 modDownload:
 	@go mod download -x

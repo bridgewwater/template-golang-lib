@@ -42,7 +42,7 @@ steps:
       - go version
       - go mod verify
       - go mod download -x
-      - go mod tidy -x -v
+      - go mod tidy -v
     when:
       event:
         - push
