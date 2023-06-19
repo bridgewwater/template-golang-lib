@@ -56,7 +56,7 @@ endef
 
 define dist_tar_with_windows_source
 	@echo "=> start $(0)"
-	@echo " want tar source folder     : $(strip ${1})"
+	@echo " want tar source folder     : $(subst /,\,$(strip ${1}))"
 	@echo "      tar file abs folder   : $(strip ${2})"
 	@echo "      tar file env mark     : $(strip ${3})"
 	@echo "      tar file full path    : $(strip ${2})${ENV_INFO_DIST_BIN_NAME}-$(strip ${3})-${ENV_INFO_DIST_VERSION}${ENV_INFO_DIST_MARK}.tar.gz"
@@ -159,8 +159,8 @@ endif
 distTestTar: distTest
 ifeq ($(OS),Windows_NT)
 	$(call dist_tar_with_windows_source,\
-	$(subst /,\,${ENV_PATH_INFO_ROOT_DIST_LOCAL_TEST}/),\
-	$(subst /,\,${ENV_PATH_INFO_ROOT_DIST_LOCAL}/),\
+	${ENV_PATH_INFO_ROOT_DIST_LOCAL_TEST}/,\
+	${ENV_PATH_INFO_ROOT_DIST_LOCAL}/,\
 	${ENV_INFO_DIST_ENV_TEST_NAME}\
 	)
 else
@@ -217,8 +217,8 @@ endif
 distTestOSTar: distTestOS
 ifeq ($(OS),Windows_NT)
 	$(call dist_tar_with_windows_source,\
-	$(subst /,\,${ENV_PATH_INFO_ROOT_DIST_OS}/${ENV_INFO_DIST_GO_OS}/${ENV_INFO_DIST_GO_ARCH}),\
-	$(subst /,\,${ENV_PATH_INFO_ROOT_DIST_OS}/),\
+	${ENV_PATH_INFO_ROOT_DIST_OS}/${ENV_INFO_DIST_GO_OS}/${ENV_INFO_DIST_GO_ARCH},\
+	${ENV_PATH_INFO_ROOT_DIST_OS}/,\
 	${ENV_INFO_DIST_ENV_TEST_NAME}-${ENV_INFO_DIST_GO_OS}-${ENV_INFO_DIST_GO_ARCH}\
 	)
 else
@@ -252,8 +252,8 @@ endif
 distReleaseTar: distRelease
 ifeq ($(OS),Windows_NT)
 	$(call dist_tar_with_windows_source,\
-	$(subst /,\,${ENV_PATH_INFO_ROOT_DIST_LOCAL_RELEASE}/),\
-	$(subst /,\,${ENV_PATH_INFO_ROOT_DIST_LOCAL}/),\
+	${ENV_PATH_INFO_ROOT_DIST_LOCAL_RELEASE}/,\
+	${ENV_PATH_INFO_ROOT_DIST_LOCAL}/,\
 	${ENV_INFO_DIST_ENV_RELEASE_NAME}\
 	)
 else
@@ -310,8 +310,8 @@ endif
 distReleaseOSTar: distReleaseOS
 ifeq ($(OS),Windows_NT)
 	$(call dist_tar_with_windows_source,\
-	$(subst /,\,${ENV_PATH_INFO_ROOT_DIST_OS}/${ENV_INFO_DIST_GO_OS}/${ENV_INFO_DIST_GO_ARCH}),\
-	$(subst /,\,${ENV_PATH_INFO_ROOT_DIST_OS}/),\
+	${ENV_PATH_INFO_ROOT_DIST_OS}/${ENV_INFO_DIST_GO_OS}/${ENV_INFO_DIST_GO_ARCH},\
+	${ENV_PATH_INFO_ROOT_DIST_OS}/,\
 	${ENV_INFO_DIST_ENV_RELEASE_NAME}-${ENV_INFO_DIST_GO_OS}-${ENV_INFO_DIST_GO_ARCH}\
 	)
 else
@@ -352,8 +352,8 @@ else
 endif
 ifeq ($(OS),Windows_NT)
 	$(call dist_tar_with_windows_source,\
-	$(subst /,\,${ENV_PATH_INFO_ROOT_DIST_OS}/${ENV_INFO_PLATFORM_OS_WINDOWS}/${ENV_INFO_PLATFORM_OS_ARCH_AMD64}),\
-	$(subst /,\,${ENV_PATH_INFO_ROOT_DIST_OS}/),\
+	${ENV_PATH_INFO_ROOT_DIST_OS}/${ENV_INFO_PLATFORM_OS_WINDOWS}/${ENV_INFO_PLATFORM_OS_ARCH_AMD64},\
+	${ENV_PATH_INFO_ROOT_DIST_OS}/,\
 	${ENV_INFO_PLATFORM_OS_WINDOWS}-${ENV_INFO_PLATFORM_OS_ARCH_AMD64}\
 	)
 else
@@ -386,8 +386,8 @@ else
 endif
 ifeq ($(OS),Windows_NT)
 	$(call dist_tar_with_windows_source,\
-	$(subst /,\,${ENV_PATH_INFO_ROOT_DIST_OS}/${ENV_INFO_PLATFORM_OS_WINDOWS}/${ENV_INFO_PLATFORM_OS_ARCH_386}),\
-	$(subst /,\,${ENV_PATH_INFO_ROOT_DIST_OS}/),\
+	${ENV_PATH_INFO_ROOT_DIST_OS}/${ENV_INFO_PLATFORM_OS_WINDOWS}/${ENV_INFO_PLATFORM_OS_ARCH_386},\
+	${ENV_PATH_INFO_ROOT_DIST_OS}/,\
 	${ENV_INFO_PLATFORM_OS_WINDOWS}-${ENV_INFO_PLATFORM_OS_ARCH_386}\
 	)
 else
@@ -420,8 +420,8 @@ else
 endif
 ifeq ($(OS),Windows_NT)
 	$(call dist_tar_with_windows_source,\
-	$(subst /,\,${ENV_PATH_INFO_ROOT_DIST_OS}/${ENV_INFO_PLATFORM_OS_WINDOWS}/${ENV_INFO_PLATFORM_OS_ARCH_ARM64}),\
-	$(subst /,\,${ENV_PATH_INFO_ROOT_DIST_OS}/),\
+	${ENV_PATH_INFO_ROOT_DIST_OS}/${ENV_INFO_PLATFORM_OS_WINDOWS}/${ENV_INFO_PLATFORM_OS_ARCH_ARM64},\
+	${ENV_PATH_INFO_ROOT_DIST_OS}/,\
 	${ENV_INFO_PLATFORM_OS_WINDOWS}-${ENV_INFO_PLATFORM_OS_ARCH_ARM64}\
 	)
 else
@@ -454,8 +454,8 @@ else
 endif
 ifeq ($(OS),Windows_NT)
 	$(call dist_tar_with_windows_source,\
-	$(subst /,\,${ENV_PATH_INFO_ROOT_DIST_OS}/${ENV_INFO_PLATFORM_OS_WINDOWS}/${ENV_INFO_PLATFORM_OS_ARCH_ARM}),\
-	$(subst /,\,${ENV_PATH_INFO_ROOT_DIST_OS}/),\
+	${ENV_PATH_INFO_ROOT_DIST_OS}/${ENV_INFO_PLATFORM_OS_WINDOWS}/${ENV_INFO_PLATFORM_OS_ARCH_ARM},\
+	${ENV_PATH_INFO_ROOT_DIST_OS}/,\
 	${ENV_INFO_PLATFORM_OS_WINDOWS}-${ENV_INFO_PLATFORM_OS_ARCH_ARM}\
 	)
 else
@@ -490,8 +490,8 @@ else
 endif
 ifeq ($(OS),Windows_NT)
 	$(call dist_tar_with_windows_source,\
-	$(subst /,\,${ENV_PATH_INFO_ROOT_DIST_OS}/${ENV_INFO_PLATFORM_OS_LINUX}/${ENV_INFO_PLATFORM_OS_ARCH_AMD64}),\
-	$(subst /,\,${ENV_PATH_INFO_ROOT_DIST_OS}/),\
+	${ENV_PATH_INFO_ROOT_DIST_OS}/${ENV_INFO_PLATFORM_OS_LINUX}/${ENV_INFO_PLATFORM_OS_ARCH_AMD64},\
+	${ENV_PATH_INFO_ROOT_DIST_OS}/,\
 	${ENV_INFO_PLATFORM_OS_LINUX}-${ENV_INFO_PLATFORM_OS_ARCH_AMD64}\
 	)
 else
@@ -524,8 +524,8 @@ else
 endif
 ifeq ($(OS),Windows_NT)
 	$(call dist_tar_with_windows_source,\
-	$(subst /,\,${ENV_PATH_INFO_ROOT_DIST_OS}/${ENV_INFO_PLATFORM_OS_LINUX}/${ENV_INFO_PLATFORM_OS_ARCH_386}),\
-	$(subst /,\,${ENV_PATH_INFO_ROOT_DIST_OS}/),\
+	${ENV_PATH_INFO_ROOT_DIST_OS}/${ENV_INFO_PLATFORM_OS_LINUX}/${ENV_INFO_PLATFORM_OS_ARCH_386},\
+	${ENV_PATH_INFO_ROOT_DIST_OS}/,\
 	${ENV_INFO_PLATFORM_OS_LINUX}-${ENV_INFO_PLATFORM_OS_ARCH_386}\
 	)
 else
@@ -558,8 +558,8 @@ else
 endif
 ifeq ($(OS),Windows_NT)
 	$(call dist_tar_with_windows_source,\
-	$(subst /,\,${ENV_PATH_INFO_ROOT_DIST_OS}/${ENV_INFO_PLATFORM_OS_LINUX}/${ENV_INFO_PLATFORM_OS_ARCH_ARM64}),\
-	$(subst /,\,${ENV_PATH_INFO_ROOT_DIST_OS}/),\
+	${ENV_PATH_INFO_ROOT_DIST_OS}/${ENV_INFO_PLATFORM_OS_LINUX}/${ENV_INFO_PLATFORM_OS_ARCH_ARM64},\
+	${ENV_PATH_INFO_ROOT_DIST_OS}/,\
 	${ENV_INFO_PLATFORM_OS_LINUX}-${ENV_INFO_PLATFORM_OS_ARCH_ARM64}\
 	)
 else
@@ -592,8 +592,8 @@ else
 endif
 ifeq ($(OS),Windows_NT)
 	$(call dist_tar_with_windows_source,\
-	$(subst /,\,${ENV_PATH_INFO_ROOT_DIST_OS}/${ENV_INFO_PLATFORM_OS_LINUX}/${ENV_INFO_PLATFORM_OS_ARCH_ARM}),\
-	$(subst /,\,${ENV_PATH_INFO_ROOT_DIST_OS}/),\
+	${ENV_PATH_INFO_ROOT_DIST_OS}/${ENV_INFO_PLATFORM_OS_LINUX}/${ENV_INFO_PLATFORM_OS_ARCH_ARM},\
+	${ENV_PATH_INFO_ROOT_DIST_OS}/,\
 	${ENV_INFO_PLATFORM_OS_LINUX}-${ENV_INFO_PLATFORM_OS_ARCH_ARM}\
 	)
 else
@@ -628,8 +628,8 @@ else
 endif
 ifeq ($(OS),Windows_NT)
 	$(call dist_tar_with_windows_source,\
-	$(subst /,\,${ENV_PATH_INFO_ROOT_DIST_OS}/${ENV_INFO_PLATFORM_OS_MACOS}/${ENV_INFO_PLATFORM_OS_ARCH_AMD64}),\
-	$(subst /,\,${ENV_PATH_INFO_ROOT_DIST_OS}/),\
+	${ENV_PATH_INFO_ROOT_DIST_OS}/${ENV_INFO_PLATFORM_OS_MACOS}/${ENV_INFO_PLATFORM_OS_ARCH_AMD64},\
+	${ENV_PATH_INFO_ROOT_DIST_OS}/,\
 	${ENV_INFO_PLATFORM_OS_MACOS}-${ENV_INFO_PLATFORM_OS_ARCH_AMD64}\
 	)
 else
@@ -662,8 +662,8 @@ else
 endif
 ifeq ($(OS),Windows_NT)
 	$(call dist_tar_with_windows_source,\
-	$(subst /,\,${ENV_PATH_INFO_ROOT_DIST_OS}/${ENV_INFO_PLATFORM_OS_MACOS}/${ENV_INFO_PLATFORM_OS_ARCH_AMD64}),\
-	$(subst /,\,${ENV_PATH_INFO_ROOT_DIST_OS}/),\
+	${ENV_PATH_INFO_ROOT_DIST_OS}/${ENV_INFO_PLATFORM_OS_MACOS}/${ENV_INFO_PLATFORM_OS_ARCH_AMD64},\
+	${ENV_PATH_INFO_ROOT_DIST_OS}/,\
 	${ENV_INFO_PLATFORM_OS_MACOS}-${ENV_INFO_PLATFORM_OS_ARCH_AMD64}\
 	)
 else
