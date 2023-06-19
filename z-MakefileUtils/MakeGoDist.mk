@@ -19,11 +19,6 @@
 # task: [ cleanAllDist ] can clean dist
 # task: [ helpDist distEnv ] can show more info
 
-ENV_SERVER_TEST_SSH_ALIAS=aliyun-ecs
-ENV_SERVER_TEST_FOLDER=/home/work/Document/
-ENV_SERVER_REPO_SSH_ALIAS=template-golang-lib
-ENV_SERVER_REPO_FOLDER=/home/ubuntu/$(ROOT_NAME)
-
 ENV_INFO_DIST_BIN_NAME=${ENV_ROOT_BUILD_BIN_NAME}
 ENV_INFO_DIST_VERSION=${ENV_DIST_VERSION}
 ENV_INFO_DIST_MARK=${ENV_DIST_MARK}
@@ -46,6 +41,7 @@ define dist_tar_with_source
 	$(warning if cp source can change here cp tar undper $(strip ${1}))
 	$(info change this - cp '${ENV_ROOT_MANIFEST_PKG_JSON}' '$(strip ${1})')
 	$(info change this - cp -R 'doc/' '$(strip ${1})/doc')
+	cp -R 'doc/' '$(strip ${1})/doc'
 	@echo "-> cp source finish"
 
 	tar -zcvf $(strip ${2})${ENV_INFO_DIST_BIN_NAME}-$(strip ${3})-${ENV_INFO_DIST_VERSION}${ENV_INFO_DIST_MARK}.tar.gz -C $(strip ${1}) "."
@@ -66,6 +62,7 @@ define dist_tar_with_windows_source
 	$(warning if cp source can change here cp tar undper $(strip ${1}))
 	$(info change this - cp '${ENV_ROOT_MANIFEST_PKG_JSON}' '$(strip ${1})')
 	$(info change this - cp -R 'doc\' '$(strip ${1})\')
+	cp -R 'doc\' '$(strip ${1})\'
 	@echo "-> cp source finish"
 
 	tar -zcvf $(strip ${2})${ENV_INFO_DIST_BIN_NAME}-$(strip ${3})-${ENV_INFO_DIST_VERSION}${ENV_INFO_DIST_MARK}.tar.gz -C $(strip ${1}) "."
@@ -229,11 +226,6 @@ else
 	)
 endif
 
-distScpTestOSTar: distTestOSTar
-	$(info => can send file:)
-	$(info scp ${ENV_PATH_INFO_ROOT_DIST_OS}/${ENV_INFO_DIST_BIN_NAME}-${ENV_INFO_DIST_ENV_TEST_NAME}-${ENV_INFO_DIST_GO_OS}-${ENV_INFO_DIST_GO_ARCH}-${ENV_INFO_DIST_VERSION}${ENV_DIST_MARK}.tar.gz ${ENV_SERVER_TEST_SSH_ALIAS}:${ENV_SERVER_TEST_FOLDER})
-	@echo "=> must check below config of set for release OS Scp"
-
 distRelease: cleanRootDistLocalRelease pathCheckRootDistLocalRelease
 ifeq ($(OS),Windows_NT)
 	$(call go_local_binary_dist,\
@@ -321,11 +313,6 @@ else
 	${ENV_INFO_DIST_ENV_RELEASE_NAME}-${ENV_INFO_DIST_GO_OS}-${ENV_INFO_DIST_GO_ARCH}\
 	)
 endif
-
-distScpReleaseOSTar: distReleaseOSTar
-	$(info => can send file:)
-	$(info scp ${ENV_PATH_INFO_ROOT_DIST_OS}/${ENV_INFO_DIST_BIN_NAME}-${ENV_INFO_DIST_ENV_RELEASE_NAME}-${ENV_INFO_DIST_GO_OS}-${ENV_INFO_DIST_GO_ARCH}-${ENV_INFO_DIST_VERSION}${ENV_DIST_MARK}.tar.gz ${ENV_SERVER_REPO_SSH_ALIAS}:${ENV_SERVER_REPO_FOLDER})
-	@echo "=> must check below config of set for release OS Scp"
 
 distAllLocalTar: distTestTar distReleaseTar
 	@echo "=> all dist as os tar finish"
@@ -647,8 +634,8 @@ ifeq ($(OS),Windows_NT)
 	${ENV_INFO_DIST_ENV_RELEASE_NAME},\
 	${ENV_INFO_DIST_BIN_NAME},\
 	${ENV_INFO_PLATFORM_OS_MACOS},\
-	${ENV_INFO_PLATFORM_OS_ARCH_AMD64},\
-	$(subst /,\,${ENV_PATH_INFO_ROOT_DIST_OS}/${ENV_INFO_PLATFORM_OS_MACOS}/${ENV_INFO_PLATFORM_OS_ARCH_AMD64}/${ENV_INFO_DIST_BIN_NAME})\
+	${ENV_INFO_PLATFORM_OS_ARCH_ARM64},\
+	$(subst /,\,${ENV_PATH_INFO_ROOT_DIST_OS}/${ENV_INFO_PLATFORM_OS_MACOS}/${ENV_INFO_PLATFORM_OS_ARCH_ARM64}/${ENV_INFO_DIST_BIN_NAME})\
 	)
 else
 	$(call go_static_binary_dist,\
@@ -656,21 +643,21 @@ else
 	${ENV_INFO_DIST_ENV_RELEASE_NAME},\
 	${ENV_INFO_DIST_BIN_NAME},\
 	${ENV_INFO_PLATFORM_OS_MACOS},\
-	${ENV_INFO_PLATFORM_OS_ARCH_AMD64},\
-	${ENV_PATH_INFO_ROOT_DIST_OS}/${ENV_INFO_PLATFORM_OS_MACOS}/${ENV_INFO_PLATFORM_OS_ARCH_AMD64}/${ENV_INFO_DIST_BIN_NAME}\
+	${ENV_INFO_PLATFORM_OS_ARCH_ARM64},\
+	${ENV_PATH_INFO_ROOT_DIST_OS}/${ENV_INFO_PLATFORM_OS_MACOS}/${ENV_INFO_PLATFORM_OS_ARCH_ARM64}/${ENV_INFO_DIST_BIN_NAME}\
 	)
 endif
 ifeq ($(OS),Windows_NT)
 	$(call dist_tar_with_windows_source,\
-	${ENV_PATH_INFO_ROOT_DIST_OS}/${ENV_INFO_PLATFORM_OS_MACOS}/${ENV_INFO_PLATFORM_OS_ARCH_AMD64},\
+	${ENV_PATH_INFO_ROOT_DIST_OS}/${ENV_INFO_PLATFORM_OS_MACOS}/${ENV_INFO_PLATFORM_OS_ARCH_ARM64},\
 	${ENV_PATH_INFO_ROOT_DIST_OS}/,\
-	${ENV_INFO_PLATFORM_OS_MACOS}-${ENV_INFO_PLATFORM_OS_ARCH_AMD64}\
+	${ENV_INFO_PLATFORM_OS_MACOS}-${ENV_INFO_PLATFORM_OS_ARCH_ARM64}\
 	)
 else
 	$(call dist_tar_with_source,\
-	${ENV_PATH_INFO_ROOT_DIST_OS}/${ENV_INFO_PLATFORM_OS_MACOS}/${ENV_INFO_PLATFORM_OS_ARCH_AMD64},\
+	${ENV_PATH_INFO_ROOT_DIST_OS}/${ENV_INFO_PLATFORM_OS_MACOS}/${ENV_INFO_PLATFORM_OS_ARCH_ARM64},\
 	${ENV_PATH_INFO_ROOT_DIST_OS}/,\
-	${ENV_INFO_PLATFORM_OS_MACOS}-${ENV_INFO_PLATFORM_OS_ARCH_AMD64}\
+	${ENV_INFO_PLATFORM_OS_MACOS}-${ENV_INFO_PLATFORM_OS_ARCH_ARM64}\
 	)
 endif
 
