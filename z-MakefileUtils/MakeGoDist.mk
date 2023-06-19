@@ -1,3 +1,5 @@
+## for golang test task
+# include z-MakefileUtils/MakeGoDist.mk
 # this file must use as base Makefile job must has variate
 #
 # must as some include MakeDistTools.mk
@@ -678,8 +680,8 @@ distPlatformTarCommonUse: distPlatformTarLinuxAmd64 distPlatformTarWinAmd64 dist
 
 distPlatformTarAll: distPlatformTarAllLinux distPlatformTarAllMacos distPlatformTarAllWindows
 
-helpDist:
-	@echo "Help: helpDist.mk"
+helpGoDist:
+	@echo "Help: MakeGoDist.mk"
 	@echo "-- distTestOS or distReleaseOS will out abi as: $(ENV_INFO_DIST_GO_OS) $(ENV_INFO_DIST_GO_ARCH) --"
 	@echo "~> make cleanAllDist             - clean all dist at $(ENV_PATH_INFO_ROOT_DIST)"
 	@echo "~> make distTest                 - build dist at ${ENV_PATH_INFO_ROOT_DIST_LOCAL_TEST} in local OS"

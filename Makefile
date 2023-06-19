@@ -42,7 +42,7 @@ ENV_ROOT_CHANGELOG_PATH?=CHANGELOG.md
 ## go test MakeGoTest.mk start
 # ignore used not matching mode
 # set ignore of test case like grep -v -E "vendor|go_fatal_error" to ignore vendor and go_fatal_error package
-ENV_ROOT_TEST_INVERT_MATCH?="vendor|go_fatal_error|robotn|shirou|go_robot"
+ENV_ROOT_TEST_INVERT_MATCH?="vendor|go_fatal_error|robotn|shirou"
 ifeq ($(OS),Windows_NT)
 ENV_ROOT_TEST_LIST?=./...
 else
@@ -54,6 +54,7 @@ ENV_ROOT_TEST_MAX_TIME:=1m
 
 include z-MakefileUtils/MakeBasicEnv.mk
 include z-MakefileUtils/MakeDistTools.mk
+include z-MakefileUtils/MakeGoList.mk
 include z-MakefileUtils/MakeGoMod.mk
 include z-MakefileUtils/MakeGoTest.mk
 include z-MakefileUtils/MakeGoDist.mk
@@ -165,6 +166,15 @@ helpProjectRoot:
 	@echo "~> make style               - run local code fmt and style check"
 	@echo "~> make dev                 - run as develop mode"
 
-help: helpGoMod helperGoTest helpDocker helpDist helpProjectRoot
+help: helpGoMod helpGoTest helpDocker helpGoDist helpProjectRoot
+ifeq ($(OS),Windows_NT)
 	@echo ""
-	@echo "-- more info see Makefile include: MakeGoMod.mk MakeGoTest.mk MakeGoDist.mk MakeDockerRun.mk --"
+	@echo "windows use this kit must install"
+	@echo "https://scoop.sh/#/apps?q=gow&s=0&d=1&o=true"
+	@echo "scoop install gow"
+	@echo "and"
+	@echo "https://scoop.sh/#/apps?q=busybox&s=0&d=1&o=true"
+	@echo "# scoop install shasum"
+endif
+	@echo ""
+	@echo "-- more info see Makefile include: MakeGoMod.mk MakeGoTest.mk MakeGoDist.mk MakeDocker.mk --"

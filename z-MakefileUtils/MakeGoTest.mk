@@ -5,20 +5,25 @@
 # ENV_ROOT_TEST_MAX_TIME timeout for test case set
 # can use as:
 #
-# ## go test MakeGoTest.mk start
-# # ignore used not matching mode
-# # set ignore of test case like grep -v -E "vendor|go_fatal_error" to ignore vendor and go_fatal_error package
-# ENV_ROOT_TEST_INVERT_MATCH ?= "vendor|go_fatal_error|robotn|shirou|go_robot"
-# ifeq ($(OS),Windows_NT)
-# ENV_ROOT_TEST_LIST?=./...
-# else
-# ENV_ROOT_TEST_LIST?=$$(go list ./... | grep -v -E ${ENV_ROOT_TEST_INVERT_MATCH})
-# endif
-# # test max time
-# ENV_ROOT_TEST_MAX_TIME:=1m
-# ## go test MakeGoTest.mk end
+### go test MakeGoTest.mk start
+## ignore used not matching mode
+## set ignore of test case like grep -v -E "vendor|go_fatal_error" to ignore vendor and go_fatal_error package
+#ENV_ROOT_TEST_INVERT_MATCH?="vendor|go_fatal_error|robotn|shirou"
+#ifeq ($(OS),Windows_NT)
+#ENV_ROOT_TEST_LIST?=./...
+#else
+#ENV_ROOT_TEST_LIST?=$$(go list ./... | grep -v -E ${ENV_ROOT_TEST_INVERT_MATCH})
+#endif
+## test max time
+#ENV_ROOT_TEST_MAX_TIME:=1m
+### go test MakeGoTest.mk end
+
 
 ENV_GO_TEST_COVERAGE_PROFILE?=coverage.txt
+
+testListCases:
+	$(info -> will show all test case)
+	@go test -list . ${ENV_ROOT_TEST_LIST}
 
 test:
 	@echo "=> run test start"
@@ -73,9 +78,9 @@ testCoverageClean:
 testCoverage:
 	@echo "=> run test coverage start"
 ifeq ($(OS),Windows_NT)
-	@go test -cover -coverprofile ${ENV_GO_TEST_COVERAGE_PROFILE} -covermode count -tags test -coverpkg ./... -v ${ENV_ROOT_TEST_LIST}
+	@go test -cover -coverprofile ${ENV_GO_TEST_COVERAGE_PROFILE} -covermode count -coverpkg ./... -tags test -v ${ENV_ROOT_TEST_LIST}
 else
-	@go test -cover -coverprofile ${ENV_GO_TEST_COVERAGE_PROFILE} -covermode count -tags test -coverpkg ./... -v ${ENV_ROOT_TEST_LIST}
+	@go test -cover -coverprofile ${ENV_GO_TEST_COVERAGE_PROFILE} -covermode count -coverpkg ./... -tags test -v ${ENV_ROOT_TEST_LIST}
 endif
 
 testCoverageBrowser: testCoverage
@@ -84,15 +89,15 @@ testCoverageBrowser: testCoverage
 testCoverageAtomic:
 	@echo "=> run test coverage start"
 ifeq ($(OS),Windows_NT)
-	@go test -cover -coverprofile ${ENV_GO_TEST_COVERAGE_PROFILE} -covermode atomic -tags test -coverpkg ./... -v ${ENV_ROOT_TEST_LIST}
+	@go test -cover -coverprofile ${ENV_GO_TEST_COVERAGE_PROFILE} -covermode atomic -coverpkg ./... -tags test -v ${ENV_ROOT_TEST_LIST}
 else
-	@go test -cover -coverprofile ${ENV_GO_TEST_COVERAGE_PROFILE} -covermode atomic -tags test -coverpkg ./... -v ${ENV_ROOT_TEST_LIST}
+	@go test -cover -coverprofile ${ENV_GO_TEST_COVERAGE_PROFILE} -covermode atomic -coverpkg ./... -tags test  -v ${ENV_ROOT_TEST_LIST}
 endif
 
 testCoverageAtomicBrowser: testCoverageAtomic
 	@go tool cover -html ${ENV_GO_TEST_COVERAGE_PROFILE}
 
-helperGoTest:
+helpGoTest:
 	@echo "#=> MakeGoTest.mk tools for golang test task"
 	@echo ""
 	@echo "sample of golang test task cover"
@@ -103,6 +108,7 @@ helperGoTest:
 	@echo "cover script atomi:"
 	@echo "go test -cover -coverprofile ${ENV_GO_TEST_COVERAGE_PROFILE} -covermode atomic -coverpkg ./... -v ${ENV_ROOT_TEST_LIST}"
 	@echo ""
+	@echo "~> make testListCases                - list test case under this package --invert-match by config"
 	@echo "~> make test                         - run test case ignore --invert-match by config"
 	@echo "~> make testCoverageClean            - clean test case coverage file"
 	@echo "~> make testCoverage                 - run test coverage case ignore --invert-match by config, coverage mode count"
