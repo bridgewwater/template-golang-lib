@@ -58,6 +58,7 @@ include z-MakefileUtils/MakeGoList.mk
 include z-MakefileUtils/MakeGoMod.mk
 include z-MakefileUtils/MakeGoTest.mk
 include z-MakefileUtils/MakeGoDist.mk
+include z-MakefileUtils/MakeGoTestIntegration.mk
 # include MakeDockerRun.mk for docker run
 include z-MakefileUtils/MakeDocker.mk
 
@@ -181,4 +182,4 @@ endif
 
 help: helpGoMod helpGoTest helpDocker helpGoDist helpProjectRoot
 	@echo ""
-	@echo "-- more info see Makefile include: MakeGoMod.mk MakeGoTest.mk MakeGoDist.mk MakeDocker.mk --"
+	@echo "-- more info see Makefile include: MakeGoMod.mk MakeGoTest.mk MakeGoTestIntegration.mk MakeGoDist.mk MakeDocker.mk --"

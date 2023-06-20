@@ -23,6 +23,8 @@ coverage.txt
 test[Dd]ata/
 # Expected results when tested
 .golden
+# integration test report out
+profile.txt
 
 ### Go template
 # Compiled Object files, Static and Dynamic libs (Shared Objects)
