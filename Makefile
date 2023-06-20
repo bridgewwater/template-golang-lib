@@ -57,8 +57,8 @@ include z-MakefileUtils/MakeDistTools.mk
 include z-MakefileUtils/MakeGoList.mk
 include z-MakefileUtils/MakeGoMod.mk
 include z-MakefileUtils/MakeGoTest.mk
-include z-MakefileUtils/MakeGoDist.mk
 include z-MakefileUtils/MakeGoTestIntegration.mk
+include z-MakefileUtils/MakeGoDist.mk
 # include MakeDockerRun.mk for docker run
 include z-MakefileUtils/MakeDocker.mk
 
