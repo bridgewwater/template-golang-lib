@@ -1,5 +1,6 @@
 ## for golang test task
 # include z-MakefileUtils/MakeGoTest.mk
+# need MakeBasicEnv.mk MakeDistTools.mk
 # need args
 # ENV_ROOT_TEST_LIST test list for most use case is ./...
 # ENV_ROOT_TEST_MAX_TIME timeout for test case set
@@ -19,7 +20,9 @@
 ### go test MakeGoTest.mk end
 
 
-ENV_GO_TEST_COVERAGE_PROFILE?=coverage.txt
+ENV_GO_TEST_COVERAGE_PROFILE ?=coverage.txt
+ENV_GO_TEST_COVERAGE_OUT ?=coverage.out
+ENV_GO_TEST_COVERAGE_HTML_OUT ?=${ENV_PATH_INFO_ROOT_DIST}/coverage.html
 
 testListCases:
 	$(info -> will show all test case)
@@ -88,7 +91,11 @@ testCoverageBrowser: testCoverage
 
 testCoverageShow:
 	$(info -> show by test coverage file: ${ENV_GO_TEST_COVERAGE_PROFILE})
-	@go tool cover -func ${ENV_GO_TEST_COVERAGE_PROFILE}
+	go tool cover -func ${ENV_GO_TEST_COVERAGE_PROFILE}
+
+testCoverageHtml: pathCheckRootDist
+	$(info -> show by test coverage file: ${ENV_GO_TEST_COVERAGE_PROFILE})
+	go tool cover -html ${ENV_GO_TEST_COVERAGE_PROFILE} -o ${ENV_GO_TEST_COVERAGE_HTML_OUT}
 
 testCoverageAtomic:
 	@echo "=> run test coverage start"
@@ -119,6 +126,7 @@ helpGoTest:
 	@echo "~> make testCoverageAtomic           - run test coverage case ignore --invert-match by config, coverage mode atomic"
 	@echo "~> make testCoverageBrowser          - see coverage at browser --invert-match by config, coverage mode count"
 	@echo "~> make testCoverageAtomicBrowser    - see coverage at browser --invert-match by config, coverage mode atomic"
+	@echo "~> make testCoverageOut              - out coverage by html file at ${ENV_GO_TEST_COVERAGE_HTML_OUT}"
 	@echo "~> make testCoverageShow             - see coverage by out file ${ENV_GO_TEST_COVERAGE_PROFILE}"
 	@echo "~> make testBenchmark                - run go test benchmark case all"
 	@echo "~> make testInstall                  - run go install case all"
