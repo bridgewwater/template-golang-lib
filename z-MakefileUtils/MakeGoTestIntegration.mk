@@ -98,7 +98,11 @@ else
 endif
 	go tool covdata percent -i $(strip ${ENV_PATH_GO_COVER_DIR_VALUE})
 
-testIntegrationReporting: testIntegrationRun
+testIntegrationPercent: export GOCOVERDIR=$(strip ${ENV_PATH_GO_COVER_DIR_VALUE})
+testIntegrationPercent:
+	go tool covdata percent -i $(strip ${ENV_PATH_GO_COVER_DIR_VALUE})
+
+testIntegrationReporting:
 	go tool covdata textfmt -i $(strip ${ENV_PATH_GO_COVER_DIR_VALUE}) -o ${ENV_PATH_GO_COV_DATA_TEXT_FMT_PATH}
 
 helpGoTestIntegration:
@@ -112,6 +116,7 @@ helpGoTestIntegration:
 	@echo "make cleanGoCoverDir             - clean go cover dir"
 	@echo "make testIntegrationBuild        - build go integration test"
 	@echo "make testIntegrationRun          - run go integration test"
+	@echo "make testIntegrationPercent      - percent after testing"
 	@echo "make testIntegrationReporting    - reporting after testIntegrationRun"
 	@echo ""
 	@echo "== go integration test help end"
