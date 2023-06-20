@@ -86,6 +86,10 @@ endif
 testCoverageBrowser: testCoverage
 	@go tool cover -html ${ENV_GO_TEST_COVERAGE_PROFILE}
 
+testCoverageShow:
+	$(info -> show by test coverage file: ${ENV_GO_TEST_COVERAGE_PROFILE})
+	@go tool cover -func ${ENV_GO_TEST_COVERAGE_PROFILE}
+
 testCoverageAtomic:
 	@echo "=> run test coverage start"
 ifeq ($(OS),Windows_NT)
@@ -115,6 +119,7 @@ helpGoTest:
 	@echo "~> make testCoverageAtomic           - run test coverage case ignore --invert-match by config, coverage mode atomic"
 	@echo "~> make testCoverageBrowser          - see coverage at browser --invert-match by config, coverage mode count"
 	@echo "~> make testCoverageAtomicBrowser    - see coverage at browser --invert-match by config, coverage mode atomic"
+	@echo "~> make testCoverageShow             - see coverage by out file ${ENV_GO_TEST_COVERAGE_PROFILE}"
 	@echo "~> make testBenchmark                - run go test benchmark case all"
 	@echo "~> make testInstall                  - run go install case all"
 	@echo "~> make testBuild                    - run go build case all"
