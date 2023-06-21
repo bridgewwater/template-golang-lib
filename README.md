@@ -66,8 +66,11 @@ $ echo "go mod vendor"
 
 ## usage
 
-- use to replace
-  `bridgewwater/template-golang-lib` to you code
+- use this template, replace list below
+  - `github.com/bridgewwater/template-golang-lib` to your package name
+  - `bridgewwater` to your owner name
+  - `template-golang-lib` to your project name
+  - `go 1.17`, `^1.17`, `1.17.13` to new go version for dev
 
 # dev
 
