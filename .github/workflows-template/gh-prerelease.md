@@ -5,7 +5,7 @@
 `gh-prerelease.yml`
 
 ```yml
-name: gh prerelease
+name: gh-prerelease
 
 on:
   push:
@@ -14,23 +14,26 @@ on:
 
 permissions:
   contents: write
+  discussions: write
 
 jobs:
-  build:
+  gh-prerelease:
+    name: gh-prerelease
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+
       - uses: softprops/action-gh-release@master
-        name: Create Prerelease
+        name: Create Release
         if: startsWith(github.ref, 'refs/tags/')
         with:
           ## with permissions to create releases in the other repo
           token: "${{ secrets.GITHUB_TOKEN }}"
-        # body_path: ${{ github.workspace }}-CHANGELOG.txt
           prerelease: true
+          # body: "this is pre-release"
+          # body_path: ${{ github.workspace }}-CHANGELOG.txt
           # https://github.com/isaacs/node-glob
-        #  files: |
-        #    **/*.tar.gz
-        #    **/*.sha256
+          # files: |
+          #   **/*.tar.gz
+          #   **/*.sha256
 ```

@@ -277,9 +277,9 @@ findFileReplaceByRegular ${new_project} "*.md" ${temple_name} ${new_project}
 
 # remove README.md last line
   if [[ ${release} -eq "Darwin" ]]; then
-    sed -i "" '105,113d' ./${new_project}/README.md
+    sed -i "" '114,123d' ./${new_project}/README.md
   else
-    sed -i '105,113d' ./${new_project}/README.md
+    sed -i '114,123d' ./${new_project}/README.md
   fi
 
 # choose LICENSE
