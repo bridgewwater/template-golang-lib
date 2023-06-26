@@ -364,7 +364,7 @@ func fetchOsEnvStr(key, devValue string) string {
 // fetchOsEnvInt
 //
 //	fetch os env split by `,` and trim space
-//	return not found will return empty.
+//	return not found will return []string(nil).
 func fetchOsEnvArray(key string) []string {
 	var devValueStr []string
 	if os.Getenv(key) == "" {
