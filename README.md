@@ -64,9 +64,10 @@ $ echo "go mod vendor"
 - [ ] more perfect test case coverage
 - [ ] more perfect benchmark case
 
-## evn
+## env
 
 - minimum go version: go 1.17
+- change `go 1.17`, `^1.17`, `1.17.13` to new go version
 
 ### libs
 
@@ -80,7 +81,6 @@ $ echo "go mod vendor"
   - `github.com/bridgewwater/template-golang-lib` to your package name
   - `bridgewwater` to your owner name
   - `template-golang-lib` to your project name
-  - `go 1.17`, `^1.17`, `1.17.13` to new go version for dev
 
 # dev
 
