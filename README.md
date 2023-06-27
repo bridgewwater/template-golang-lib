@@ -7,6 +7,16 @@
 [![codecov](https://codecov.io/gh/bridgewwater/template-golang-lib/branch/main/graph/badge.svg)](https://codecov.io/gh/bridgewwater/template-golang-lib)
 [![github release](https://img.shields.io/github/v/release/bridgewwater/template-golang-lib?style=social)](https://github.com/bridgewwater/template-golang-lib/releases)
 
+### cli tools to init project fast
+
+```bash
+$ curl -L --fail https://raw.githubusercontent.com/bridgewwater/template-golang-lib/main/template-golang-lib
+# let template-golang-lib file folder under $PATH
+$ chmod +x template-golang-lib
+# see how to use
+$ template-golang-lib -h
+```
+
 ## for what
 
 - this project used to github golang lib project
@@ -112,14 +122,4 @@ $ make dockerTestPruneLatest
 
 # more info see
 $ make helpDocker
-```
-
-### cli tools to init project fast
-
-```bash
-$ curl -L --fail https://raw.githubusercontent.com/bridgewwater/template-golang-lib/main/template-golang-lib
-# let template-golang-lib file folder under $PATH
-$ chmod +x template-golang-lib
-# see how to use
-$ template-golang-lib -h
 ```
