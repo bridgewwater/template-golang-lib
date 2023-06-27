@@ -10,7 +10,7 @@ ARG GO_ENV_ROOT_BUILD_BIN_NAME=template-golang-lib
 ARG GO_ENV_ROOT_BUILD_BIN_PATH=build/${GO_ENV_ROOT_BUILD_BIN_NAME}
 ARG GO_ENV_ROOT_BUILD_ENTRANCE=cmd/main.go
 
-ARG GO_PATH_SOURCE_DIR=/go/src/
+ARG GO_PATH_SOURCE_DIR=/go/src
 WORKDIR ${GO_PATH_SOURCE_DIR}
 
 RUN mkdir -p ${GO_PATH_SOURCE_DIR}/${GO_ENV_PACKAGE_NAME}
@@ -37,7 +37,7 @@ ARG GO_ENV_PACKAGE_NAME=github.com/bridgewwater/template-golang-lib
 ARG GO_ENV_ROOT_BUILD_BIN_NAME=template-golang-lib
 ARG GO_ENV_ROOT_BUILD_BIN_PATH=build/${GO_ENV_ROOT_BUILD_BIN_NAME}
 
-ARG GO_PATH_SOURCE_DIR=/go/src/
+ARG GO_PATH_SOURCE_DIR=/go/src
 
 #RUN apk --no-cache add \
 #  ca-certificates mailcap curl \
