@@ -9,6 +9,7 @@ import (
 
 func TestMain(m *testing.M) {
 	// setup
-	os.Exit(m.Run())
+	runRes := m.Run()
 	// teardown
+	os.Exit(runRes)
 }
