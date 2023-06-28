@@ -1,7 +1,6 @@
 package example
 
 import (
-	"github.com/bridgewwater/template-golang-lib/example"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
@@ -14,5 +13,5 @@ func TestFoo(t *testing.T) {
 	// do Foo
 
 	// verify Foo
-	assert.Equal(t, 3, example.Foo(1, 2))
+	assert.Equal(t, 3, Foo(1, 2))
 }
