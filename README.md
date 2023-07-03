@@ -37,13 +37,13 @@ Please read [Contributor Guide](.github/CONTRIBUTING_DOC/CONTRIBUTING.md) for mo
 in go mod project
 
 ```bash
-# warning use privte git host must set
+# warning use private git host must set
 # global set for once
 # add private git host like github.com to evn GOPRIVATE
 $ go env -w GOPRIVATE='github.com'
 # use ssh proxy
 # set ssh-key to use ssh as http
-$ git config --global url."git@github.com:".insteadOf "http://github.com/"
+$ git config --global url."git@github.com:".insteadOf "https://github.com/"
 # or use PRIVATE-TOKEN
 # set PRIVATE-TOKEN as gitlab or gitea
 $ git config --global http.extraheader "PRIVATE-TOKEN: {PRIVATE-TOKEN}"
@@ -52,7 +52,7 @@ $ git config --global url."ssh://github.com/".insteadOf "https://github.com/"
 
 # before above global settings
 # test version info
-$ git ls-remote -q http://github.com/bridgewwater/template-golang-lib.git
+$ git ls-remote -q https://github.com/bridgewwater/template-golang-lib.git
 
 # test depends see full version
 $ go list -mod readonly -v -m -versions github.com/bridgewwater/template-golang-lib
