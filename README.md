@@ -5,7 +5,7 @@
 [![GoDoc](https://godoc.org/github.com/bridgewwater/template-golang-lib?status.png)](https://godoc.org/github.com/bridgewwater/template-golang-lib/)
 [![GoReportCard](https://goreportcard.com/badge/github.com/bridgewwater/template-golang-lib)](https://goreportcard.com/report/github.com/bridgewwater/template-golang-lib)
 [![codecov](https://codecov.io/gh/bridgewwater/template-golang-lib/branch/main/graph/badge.svg)](https://codecov.io/gh/bridgewwater/template-golang-lib)
-[![github release](https://img.shields.io/github/v/release/bridgewwater/template-golang-lib?style=social)](https://github.com/bridgewwater/template-golang-lib/releases)
+[![GitHub release)](https://img.shields.io/github/v/release/bridgewwater/template-golang-lib)](https://github.com/bridgewwater/template-golang-lib/releases)
 
 ### cli tools to init project fast
 
@@ -29,6 +29,8 @@ $ template-golang-lib -h
 We welcome community contributions to this project.
 
 Please read [Contributor Guide](.github/CONTRIBUTING_DOC/CONTRIBUTING.md) for more information on how to get started.
+
+请阅读有关 [贡献者指南](.github/CONTRIBUTING_DOC/zh-CN/CONTRIBUTING.md) 以获取更多如何入门的信息
 
 ## depends
 

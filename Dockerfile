@@ -8,7 +8,7 @@ FROM golang:1.17.13-buster as builder
 ARG GO_ENV_PACKAGE_NAME=github.com/bridgewwater/template-golang-lib
 ARG GO_ENV_ROOT_BUILD_BIN_NAME=template-golang-lib
 ARG GO_ENV_ROOT_BUILD_BIN_PATH=build/${GO_ENV_ROOT_BUILD_BIN_NAME}
-ARG GO_ENV_ROOT_BUILD_ENTRANCE=cmd/main.go
+ARG GO_ENV_ROOT_BUILD_ENTRANCE=cmd/template-golang-lib/main.go
 
 ARG GO_PATH_SOURCE_DIR=/go/src
 WORKDIR ${GO_PATH_SOURCE_DIR}
