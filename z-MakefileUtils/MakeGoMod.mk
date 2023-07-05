@@ -72,6 +72,8 @@ ifeq ($(shell uname),Darwin)
 	@echo "brew install golangci-lint"
 	@brew install golangci-lint
 else
+	@echo "install golangci-lint as go-1.18:"
+	@echo "go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.49.0"
 	@echo "install golangci-lint to $(go env GOPATH)/bin"
 	go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
 endif
