@@ -280,6 +280,8 @@ findFileReplaceByRegular ${new_project} "*.md" ${temple_group} ${new_repo_group}
 findFileReplaceByRegular ${new_project} "*.md" ${temple_name} ${new_project}
 findFileReplaceByRegular ${new_project} "*.yml" ${temple_group} ${new_repo_group}
 findFileReplaceByRegular ${new_project} "*.yml" ${temple_name} ${new_project}
+# replace cmd build entrance
+mv ${new_project}/cmd/${temple_name} ${new_project}/cmd/${new_project}
 
 # remove README.md last line
 if [[ ${release} -eq "Darwin" ]]; then
@@ -287,9 +289,6 @@ if [[ ${release} -eq "Darwin" ]]; then
 else
     sed -i '10,19d' ./${new_project}/README.md
 fi
-
-# replace cmd build entrance
-mv ${new_project}/cmd/${temple_name} ${new_project}/cmd/${new_project}
 
 # choose LICENSE
 read -p "Choose license (default: apache)? [mit] " read_choose_license
