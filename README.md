@@ -76,13 +76,14 @@ $ echo "go mod vendor"
 | lib                                 | version |
 |:------------------------------------|:--------|
 | https://github.com/stretchr/testify | v1.8.4  |
+| https://github.com/sebdah/goldie    | v2.5.3  |
 
 ## usage
 
 - use this template, replace list below
-  - `github.com/bridgewwater/template-golang-lib` to your package name
-  - `bridgewwater` to your owner name
-  - `template-golang-lib` to your project name
+    - `github.com/bridgewwater/template-golang-lib` to your package name
+    - `bridgewwater` to your owner name
+    - `template-golang-lib` to your project name
 
 # dev
 
