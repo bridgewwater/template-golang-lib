@@ -49,7 +49,9 @@ func TestGoldieData(t *testing.T) {
 	}
 	for _, tc := range tests {
 		t.Run(tc.name, func(t *testing.T) {
-			g := goldie.New(t)
+			g := goldie.New(t,
+				goldie.WithDiffEngine(goldie.ClassicDiff), // default: goldie.ClassicDiff
+			)
 
 			gotResult, gotErr := goldieDataMock(tc.c)
 			assert.Equal(t, tc.wantErr, gotErr)
