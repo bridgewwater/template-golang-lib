@@ -9,6 +9,7 @@
 *.mod  test eol=lf
 *.sum  test eol=lf
 *.go  test eol=lf
+*.json  test eol=lf
 *.golden  test eol=lf
 
 ###############################################################################
