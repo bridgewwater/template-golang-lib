@@ -4,6 +4,8 @@
 logs/
 
 ### build temple
+
+CHANGELOG.txt
 build/
 dist/
 
