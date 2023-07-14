@@ -5,7 +5,7 @@ on:
     inputs:
       upload_artifact_name:
         description: 'upload artifact name'
-        default: 'biz-folder'
+        default: 'go-release'
         required: false
         type: string
 
