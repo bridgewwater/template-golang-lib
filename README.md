@@ -78,6 +78,8 @@ $ echo "go mod vendor"
 | https://github.com/stretchr/testify | v1.8.4  |
 | https://github.com/sebdah/goldie    | v2.5.3  |
 
+- more libs see [go.mod](https://github.com/bridgewwater/template-golang-lib/blob/main/go.mod)
+
 ## usage
 
 - use this template, replace list below
