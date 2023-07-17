@@ -133,7 +133,7 @@ style: modTidy modVerify modFmt modLintRun
 ci: modTidy modVerify modFmt modVet modLintRun test
 
 buildMain:
-	@echo "-> start build local OS"
+	@echo "-> start build local OS: ${PLATFORM} ${OS_BIT}"
 ifeq ($(OS),Windows_NT)
 	@go build -o $(subst /,\,${ENV_ROOT_BUILD_BIN_PATH}).exe ${ENV_ROOT_BUILD_ENTRANCE}
 	@echo "-> finish build out path: $(subst /,\,${ENV_ROOT_BUILD_BIN_PATH}).exe"
@@ -144,7 +144,7 @@ endif
 
 dev: export ENV_WEB_AUTO_HOST=true
 dev: cleanBuild buildMain
-ifeq ($(OS),windows)
+ifeq ($(OS),Windows_NT)
 	$(subst /,\,${ENV_ROOT_BUILD_BIN_PATH}).exe ${ENV_RUN_INFO_ARGS}
 else
 	${ENV_ROOT_BUILD_BIN_PATH} ${ENV_RUN_INFO_ARGS}
