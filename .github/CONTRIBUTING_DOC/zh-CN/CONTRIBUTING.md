@@ -127,3 +127,7 @@ Closes #1234,#2345
 > 除了 Header、Body 和 Footer 这 3 个部分，Commit Message 还有一种特殊情况：如果当前 commit 还原了先前的 commit，则应以
 > revert: 开头，后跟还原的 commit 的 Header。而且，在 Body 中必须写成 This reverts commit ，其中 hash 是要还原的 commit 的 SHA
 > 标识。
+
+## 生成套件
+
+- 查看 [gh-conventional-kit](https://github.com/sinlov/gh-conventional-kit) 以获取更多信息

@@ -130,3 +130,7 @@ Closes #1234,#2345
 > In addition to the Header, Body, and Footer, Commit Message has a special case: If the current commit restores a
 > previous commit, it should start with revert:, which is followed by a header of a restored commit. Besides, it must be
 > written as This reverts commit in the Body. Among them, hash is the SHA identity of the commit to be restored.
+
+## generate kit
+
+- See [gh-conventional-kit](https://github.com/sinlov/gh-conventional-kit) to get more info
