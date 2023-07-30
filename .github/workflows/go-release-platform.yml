@@ -26,7 +26,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ${{ env.WORK_DIR }}
+       # working-directory: ${{ env.WORK_DIR }}
     strategy:
       matrix:
         # You can add more, for any target you'd like! target list see: go tool dist list
