@@ -53,12 +53,10 @@ ENV_ROOT_TEST_MAX_TIME:=1m
 ## go test MakeGoTest.mk end
 
 include z-MakefileUtils/MakeBasicEnv.mk
-include z-MakefileUtils/MakeDistTools.mk
 include z-MakefileUtils/MakeGoList.mk
 include z-MakefileUtils/MakeGoMod.mk
 include z-MakefileUtils/MakeGoTest.mk
 include z-MakefileUtils/MakeGoTestIntegration.mk
-include z-MakefileUtils/MakeGoDist.mk
 # include MakeDockerRun.mk for docker run
 include z-MakefileUtils/MakeDocker.mk
 
@@ -113,7 +111,7 @@ cleanTestData:
 clean: cleanTest cleanBuild cleanLog
 	@echo "~> clean finish"
 
-cleanAll: clean cleanAllDist
+cleanAll: clean
 	@echo "~> clean all finish"
 
 init:
@@ -184,6 +182,6 @@ endif
 	@echo "~> make style               - run local code fmt and style check"
 	@echo "~> make dev                 - run as develop mode"
 
-help: helpGoMod helpGoTest helpDocker helpGoDist helpProjectRoot
+help: helpGoMod helpGoTest helpDocker helpProjectRoot
 	@echo ""
-	@echo "-- more info see Makefile include: MakeGoMod.mk MakeGoTest.mk MakeGoTestIntegration.mk MakeGoDist.mk MakeDocker.mk --"
+	@echo "-- more info see Makefile include: MakeGoMod.mk MakeGoTest.mk MakeGoTestIntegration.mk MakeDocker.mk --"
