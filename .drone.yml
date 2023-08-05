@@ -31,7 +31,7 @@ steps:
         - GOPATH
         - GOBIN
   - name: go-init
-    image: golang:1.18.10-buster
+    image: golang:1.19.10-buster
     pull: if-not-exists
     volumes:
       - name: go_cache
@@ -50,7 +50,7 @@ steps:
     depends_on: # https://docs.drone.io/pipeline/exec/syntax/parallelism/
       - go-init
 
-    image: golang:1.18.10-buster
+    image: golang:1.19.10-buster
     pull: if-not-exists
     volumes:
       - name: go_cache
@@ -68,7 +68,7 @@ steps:
     depends_on: # https://docs.drone.io/pipeline/exec/syntax/parallelism/
       - go-test
 
-    image: golang:1.18.10-buster
+    image: golang:1.19.10-buster
     pull: if-not-exists
     volumes:
       - name: go_cache
@@ -87,7 +87,7 @@ steps:
       - go-test
       - go-test-benchmark
 
-    image: sinlov/drone-feishu-group-robot:1.13.0 # https://hub.docker.com/r/sinlov/drone-feishu-group-robot/tags
+    image: sinlov/drone-feishu-group-robot:1.14.0 # https://hub.docker.com/r/sinlov/drone-feishu-group-robot/tags
     pull: if-not-exists
     settings:
       debug: false
