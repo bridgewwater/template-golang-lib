@@ -1,10 +1,13 @@
 [![ci](https://github.com/bridgewwater/template-golang-lib/actions/workflows/ci.yml/badge.svg)](https://github.com/bridgewwater/template-golang-lib/actions/workflows/ci.yml)
 [![TravisBuildStatus](https://api.travis-ci.com/bridgewwater/template-golang-lib.svg?branch=main)](https://travis-ci.com/bridgewwater/template-golang-lib)
-[![license](https://img.shields.io/github/license/bridgewwater/template-golang-lib)](https://github.com/bridgewwater/template-golang-lib)
+
 [![go mod version](https://img.shields.io/github/go-mod/go-version/bridgewwater/template-golang-lib?label=go.mod)](https://github.com/bridgewwater/template-golang-lib)
-[![GoDoc](https://godoc.org/github.com/bridgewwater/template-golang-lib?status.png)](https://godoc.org/github.com/bridgewwater/template-golang-lib/)
-[![GoReportCard](https://goreportcard.com/badge/github.com/bridgewwater/template-golang-lib)](https://goreportcard.com/report/github.com/bridgewwater/template-golang-lib)
+[![GoDoc](https://godoc.org/github.com/bridgewwater/template-golang-lib?status.png)](https://godoc.org/github.com/bridgewwater/template-golang-lib)
+[![goreportcard](https://goreportcard.com/badge/github.com/bridgewwater/template-golang-lib)](https://goreportcard.com/report/github.com/bridgewwater/template-golang-lib)
+
+[![GitHub license](https://img.shields.io/github/license/bridgewwater/template-golang-lib)](https://github.com/bridgewwater/template-golang-lib)
 [![codecov](https://codecov.io/gh/bridgewwater/template-golang-lib/branch/main/graph/badge.svg)](https://codecov.io/gh/bridgewwater/template-golang-lib)
+[![GitHub latest SemVer tag)](https://img.shields.io/github/v/tag/bridgewwater/template-golang-lib)](https://github.com/bridgewwater/template-golang-lib/tags)
 [![GitHub release)](https://img.shields.io/github/v/release/bridgewwater/template-golang-lib)](https://github.com/bridgewwater/template-golang-lib/releases)
 
 ### cli tools to init project fast
