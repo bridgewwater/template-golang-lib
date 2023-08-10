@@ -1,16 +1,16 @@
 ---
-name: Help wanted
-about: 创建报告以需要帮助
-title: '[help wanted]'
+name: Question
+about: want ask question for this project
 ref: "main"
+title: '[question]'
 assignees: ''
 labels:
-  - "help wanted"
+  - question
 
 ---
 
-**Describe helpe wanted**
-A clear and concise description of what you want
+**Describe question **
+A clear and concise description of what you question
 
 **Expected behavior**
 A clear and concise description of what you expected to happen.
@@ -24,4 +24,4 @@ If applicable, add screenshots to help explain your problem.
  - Version [e.g. 22]
 
 **Additional context**
-Add any other context about the problem here.
+Add any other context about the question here.

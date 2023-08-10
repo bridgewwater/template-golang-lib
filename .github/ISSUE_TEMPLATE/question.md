@@ -1,6 +1,6 @@
 ---
 name: Question
-about: want ask question for this project
+about: 想问这个项目的问题
 ref: "main"
 title: '[question]'
 assignees: ''

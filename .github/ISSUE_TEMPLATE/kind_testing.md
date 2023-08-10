@@ -1,16 +1,16 @@
 ---
-name: Help wanted
-about: 创建报告以需要帮助
-title: '[help wanted]'
+name: Kind/Testing
+about: 与测试相关的问题或拉取请求
+title: '[Testing]'
 ref: "main"
 assignees: ''
 labels:
-  - "help wanted"
+  - Kind/Testing
 
 ---
 
-**Describe helpe wanted**
-A clear and concise description of what you want
+**Describe testing **
+A clear and concise description of what you testing
 
 **Expected behavior**
 A clear and concise description of what you expected to happen.
@@ -24,4 +24,4 @@ If applicable, add screenshots to help explain your problem.
  - Version [e.g. 22]
 
 **Additional context**
-Add any other context about the problem here.
+Add any other context about the testing here.

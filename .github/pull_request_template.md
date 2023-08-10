@@ -1,11 +1,11 @@
 ---
-name: Feature request
+name: pull request
 about: New feature or request
-ref: "main"
-title: '[enhancement]'
+ref: ""
+title: '[Priority/Medium]'
 assignees: ''
 labels:
-  - enhancement
+  - Priority/Medium
 
 ---
 

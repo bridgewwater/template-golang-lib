@@ -1,6 +1,6 @@
 ---
 name: good first issue
-about: 新人告知
+about: Good for newcomers
 ref: "main"
 title: '[good first issue]'
 assignees: ''
