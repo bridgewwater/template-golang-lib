@@ -347,9 +347,9 @@ esac
 
 # remove README.md last line
 if [[ ${release} -eq "Darwin" ]]; then
-    sed -i "" '13,21d' ./${new_project}/README.md
+    sed -i "" '12,21d' ./${new_project}/README.md
 else
-    sed -i '13,21d' ./${new_project}/README.md
+    sed -i '12,21d' ./${new_project}/README.md
 fi
 
 cd ..
