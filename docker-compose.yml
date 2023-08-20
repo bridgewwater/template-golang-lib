@@ -1,6 +1,6 @@
-# copy right
+# copy right by bridgewwater
 # Licenses http://www.apache.org/licenses/LICENSE-2.0
-# more info see https://docs.docker.com/compose/compose-file/
+# more info see https://docs.docker.com/compose/compose-file/ or https://docker.github.io/compose/compose-file/
 version: '3.8'
 
 networks:
@@ -9,18 +9,12 @@ networks:
 #  web-data:
 services:
   template-golang-lib:
-    container_name: '${ROOT_DOCKER_CONTAINER}'
-    image: '${ROOT_DOCKER_IMAGE_NAME}:${ROOT_DOCKER_IMAGE_TAG}' # see local docker file
-#    ports:
-#      - "38080:38080"
-    volumes:
-      - "$PWD:/app"
+    build:
+      context: ./
+      dockerfile : build.dockerfile
     environment:
       - ENV_WEB_HTTPS_ENABLE=false
       - ENV_WEB_AUTO_HOST=false
-#      - ENV_WEB_HOST=${ENV_WEB_HOST}:38080
-#      - ENV_WEB_HOST=0.0.0.0:38080
-    entrypoint:
-      - "/app/template-golang-lib"
-#    working_dir: "/app"
-#    command: ["make", "dep", "test"]
+    # working_dir: "/app"
+    # command: ["make", "dev"]
+    restart: on-failure:3 # can set always | on-failure:3 | unless-stopped

@@ -13,7 +13,7 @@ jobs:
       matrix:
         go:
          - '^1.19'
-         - '1.19.10'
+         - '1.19.12'
         os:
           - macos-latest
           - windows-latest

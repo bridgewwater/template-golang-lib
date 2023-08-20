@@ -1,21 +1,24 @@
 .PHONY: test check clean build dist all
 #TOP_DIR := $(shell pwd)
 # can change by env:ENV_CI_DIST_VERSION use and change by env:ENV_CI_DIST_MARK by CI
-ENV_DIST_VERSION=v0.1.2
+ENV_DIST_VERSION =v0.1.2
 ENV_DIST_MARK=
 
-ROOT_NAME?=template-golang-lib
+ROOT_NAME ?=template-golang-lib
 
 ## MakeDocker.mk settings start
-ROOT_OWNER?=bridgewwater
-ROOT_PARENT_SWITCH_TAG=1.19.10-buster
+ROOT_OWNER ?=bridgewwater
+ROOT_PARENT_SWITCH_TAG =1.19.12-bullseye
 # for image local build
-INFO_TEST_BUILD_DOCKER_PARENT_IMAGE=golang
+INFO_TEST_BUILD_DOCKER_PARENT_IMAGE =golang
 # for image running
-INFO_BUILD_DOCKER_FROM_IMAGE=alpine:3.17
-INFO_BUILD_DOCKER_FILE=Dockerfile
-INFO_TEST_BUILD_DOCKER_FILE=Dockerfile.s6
+INFO_BUILD_DOCKER_FROM_IMAGE =alpine:3.17
+INFO_BUILD_DOCKER_FILE =Dockerfile
+INFO_TEST_BUILD_DOCKER_FILE =build.dockerfile
 ## MakeDocker.mk settings end
+## MakeDockerCompose.mk settings start
+INFO_DOCKER_COMPOSE_DEFAULT_FILE ?=docker-compose.yml
+## MakeDockerCompose.mk settings end
 
 ## run info start
 ENV_RUN_INFO_HELP_ARGS= -h
@@ -24,19 +27,19 @@ ENV_RUN_INFO_ARGS=
 
 ## build dist env start
 # change to other build entrance
-ENV_ROOT_BUILD_ENTRANCE=cmd/template-golang-lib/main.go
-ENV_ROOT_BUILD_BIN_NAME=${ROOT_NAME}
-ENV_ROOT_BUILD_PATH=build
-ENV_ROOT_BUILD_BIN_PATH=${ENV_ROOT_BUILD_PATH}/${ENV_ROOT_BUILD_BIN_NAME}
-ENV_ROOT_LOG_PATH=logs/
+ENV_ROOT_BUILD_ENTRANCE =cmd/template-golang-lib/main.go
+ENV_ROOT_BUILD_BIN_NAME =${ROOT_NAME}
+ENV_ROOT_BUILD_PATH =build
+ENV_ROOT_BUILD_BIN_PATH =${ENV_ROOT_BUILD_PATH}/${ENV_ROOT_BUILD_BIN_NAME}
+ENV_ROOT_LOG_PATH =logs/
 # linux windows darwin  list as: go tool dist list
-ENV_DIST_GO_OS=linux
+ENV_DIST_GO_OS =linux
 # amd64 386
-ENV_DIST_GO_ARCH=amd64
+ENV_DIST_GO_ARCH =amd64
 # mark for dist and tag helper
-ENV_ROOT_MANIFEST_PKG_JSON?=package.json
-ENV_ROOT_MAKE_FILE?=Makefile
-ENV_ROOT_CHANGELOG_PATH?=CHANGELOG.md
+ENV_ROOT_MANIFEST_PKG_JSON ?=package.json
+ENV_ROOT_MAKE_FILE ?=Makefile
+ENV_ROOT_CHANGELOG_PATH ?=CHANGELOG.md
 ## build dist env end
 
 ## go test MakeGoTest.mk start
@@ -61,6 +64,7 @@ include z-MakefileUtils/MakeGoTestIntegration.mk
 include z-MakefileUtils/MakeGoDist.mk
 # include MakeDockerRun.mk for docker run
 include z-MakefileUtils/MakeDocker.mk
+include z-MakefileUtils/MakeDockerCompose.mk
 
 all: env
 
@@ -149,10 +153,6 @@ ifeq ($(OS),Windows_NT)
 else
 	${ENV_ROOT_BUILD_BIN_PATH} ${ENV_RUN_INFO_ARGS}
 endif
-
-cloc:
-	@echo "see: https://stackoverflow.com/questions/26152014/cloc-ignore-exclude-list-file-clocignore"
-	cloc --exclude-list-file=.clocignore .
 
 helpProjectRoot:
 	@echo "Help: Project root Makefile"

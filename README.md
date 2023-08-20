@@ -13,11 +13,11 @@
 ### cli tools to init project fast
 
 ```bash
-$ curl -L --fail https://raw.githubusercontent.com/bridgewwater/template-golang-lib/main/template-golang-lib
-# let template-golang-lib file folder under $PATH
-$ chmod +x template-golang-lib
+$ curl -L --fail https://raw.githubusercontent.com/bridgewwater/template-golang-lib/main/temp-golang-lib
+# let temp-golang-lib file folder under $PATH
+$ chmod +x temp-golang-lib
 # see how to use
-$ template-golang-lib -h
+$ temp-golang-lib -h
 ```
 
 ## for what
@@ -72,7 +72,7 @@ $ echo "go mod vendor"
 ## env
 
 - minimum go version: go 1.19
-- change `go 1.19`, `^1.19`, `1.19.10-buster`, `1.19.10` to new go version
+- change `go 1.19`, `^1.19`, `1.19.12-bullseye`, `1.19.12` to new go version
 
 ### libs
 
