@@ -258,9 +258,9 @@ replaceFileByRegular ${new_project}/go.mod ${temple_repo_host}\/${temple_group}\
 replaceFileByRegular ${new_project}/Dockerfile ${temple_name} ${new_project}
 replaceFileByRegular ${new_project}/Dockerfile ${temple_group} ${new_repo_group}
 replaceFileByRegular ${new_project}/Dockerfile ${temple_group}\/${temple_name} ${new_repo_group}\/${new_project}
-replaceFileByRegular ${new_project}/Dockerfile.s6 ${temple_name} ${new_project}
-replaceFileByRegular ${new_project}/Dockerfile.s6 ${temple_group} ${new_repo_group}
-replaceFileByRegular ${new_project}/Dockerfile.s6 ${temple_group}\/${temple_name} ${new_repo_group}\/${new_project}
+# replaceFileByRegular ${new_project}/Dockerfile.s6 ${temple_name} ${new_project}
+# replaceFileByRegular ${new_project}/Dockerfile.s6 ${temple_group} ${new_repo_group}
+# replaceFileByRegular ${new_project}/Dockerfile.s6 ${temple_group}\/${temple_name} ${new_repo_group}\/${new_project}
 replaceFileByRegular ${new_project}/docker-compose.yml ${temple_name} ${new_project}
 replaceFileByRegular ${new_project}/Makefile ${temple_group} ${new_repo_group}
 replaceFileByRegular ${new_project}/Makefile ${temple_name} ${new_project}
@@ -288,6 +288,11 @@ findFileReplaceByRegular ${new_project} "*.json" ${temple_group} ${new_repo_grou
 findFileReplaceByRegular ${new_project} "*.json" ${temple_name} ${new_project}
 # replace cmd build entrance
 mv ${new_project}/cmd/${temple_name} ${new_project}/cmd/${new_project}
+
+# fix go install
+findFileReplaceByRegular ${new_project} "*.yml" "go install ${new_repo_host}" "go install github.com"
+findFileReplaceByRegular ${new_project} "*.dockerfile" "go install ${new_repo_host}" "go install github.com"
+# findFileReplaceByRegular ${new_project} "README.md" "go install ${new_repo_host}" "go install github.com"
 
 # choose LICENSE
 read -p "Choose license (default: apache)? [mit] " read_choose_license
@@ -351,6 +356,9 @@ if [[ ${release} -eq "Darwin" ]]; then
 else
     sed -i '12,21d' ./${new_project}/README.md
 fi
+
+cd ${new_project}
+git init
 
 cd ..
 new_project="$(pwd)/${new_project}"

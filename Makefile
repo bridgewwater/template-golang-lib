@@ -154,6 +154,10 @@ else
 	${ENV_ROOT_BUILD_BIN_PATH} ${ENV_RUN_INFO_ARGS}
 endif
 
+runHelp: export CLI_VERBOSE=false
+runHelp:
+	go run -v ${ENV_ROOT_BUILD_ENTRANCE} ${ENV_RUN_INFO_HELP_ARGS}
+
 helpProjectRoot:
 	@echo "Help: Project root Makefile"
 ifeq ($(OS),Windows_NT)
@@ -183,6 +187,7 @@ endif
 	@echo "~> make ci                  - run CI tools tasks"
 	@echo "~> make style               - run local code fmt and style check"
 	@echo "~> make dev                 - run as develop mode"
+	@echo "~> make runHelp             - run use ${ENV_RUN_INFO_HELP_ARGS}"
 
 help: helpGoMod helpGoTest helpGoDist helpDocker helpProjectRoot
 	@echo ""
