@@ -290,9 +290,23 @@ findFileReplaceByRegular ${new_project} "*.json" ${temple_name} ${new_project}
 mv ${new_project}/cmd/${temple_name} ${new_project}/cmd/${new_project}
 
 # fix go install
+findFileReplaceByRegular ${new_project} "*.mk" "go install ${new_repo_host}" "go install github.com"
 findFileReplaceByRegular ${new_project} "*.yml" "go install ${new_repo_host}" "go install github.com"
 findFileReplaceByRegular ${new_project} "*.dockerfile" "go install ${new_repo_host}" "go install github.com"
-# findFileReplaceByRegular ${new_project} "README.md" "go install ${new_repo_host}" "go install github.com"
+
+# readme.md fix golang package
+readme_package_fix=(
+  stretchr
+  sebdah
+  spf13
+)
+if [ ! -n "${clean_sync_list}" ];then
+  pI "readme_package_fix is empty"
+else
+  for readme_package_fix_item in ${readme_package_fix[@]}; do
+    findFileReplaceByRegular ${new_project} "README.md" "${new_repo_host}\/${readme_package_fix_item}" "github.com\/${readme_package_fix_item}"
+  done
+fi
 
 # choose LICENSE
 read -p "Choose license (default: apache)? [mit] " read_choose_license
