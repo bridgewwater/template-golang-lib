@@ -1,6 +1,6 @@
 ---
 name: Help wanted
-about: 创建报告以需要帮助
+about: Create a report to want help
 title: '[help wanted]'
 ref: "main"
 assignees: ''
