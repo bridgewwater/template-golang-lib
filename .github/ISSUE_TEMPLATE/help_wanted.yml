@@ -1,10 +1,10 @@
-name: ❓Question
-title: "[question]: "
-description: Want ask question for this project
+name: 💁Help wanted
+title: "[help wanted]: "
+description: Create a report to want help
 #assignees:
 #  - octocat
 labels:
-  - question
+  - enhancement
 
 body:
   - type: markdown
@@ -13,10 +13,10 @@ body:
         Thanks for your interest in the project and taking the time to fill out this report!
 
   - type: textarea
-    id: question-description
+    id: describe-wanted
     attributes:
-      label: A clear and concise description of what you question
-      description: I want [goal / wish] so that [benefit]. If you intend to submit a question, tell us in the description.'
+      label: Describe help wanted
+      description: 'A clear and concise description of what you want'
     validations:
       required: true
 
