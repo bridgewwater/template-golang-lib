@@ -1,8 +1,6 @@
 name: Bug report
 about: Create a report to help us improve
 description: Report an bug
-title: '[bug]'
-ref: "main"
 #assignees:
 #  - octocat
 labels:
