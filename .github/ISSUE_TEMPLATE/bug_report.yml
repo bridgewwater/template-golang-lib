@@ -22,6 +22,7 @@ body:
         - cli
         - server
         - web-ui
+        - CI/CD
         - other
     validations:
       required: true
@@ -46,12 +47,8 @@ body:
       description: Output of `system version`
       render: shell
       placeholder: |
-        # OS: [e.g. iOS]
-        # Browser [e.g. chrome, safari]
-        # Version [e.g. 22]
-        
         get system info by command
-        
+
         # UNIX like
         $ uname -a
         # linux
@@ -60,6 +57,10 @@ body:
         $ sw_vers
         # windows
         $ systeminfo
+
+        # OS: [e.g. iOS]
+        # Browser [e.g. chrome, safari]
+        # Version [e.g. 22]
     validations:
       required: true
 
@@ -84,7 +85,7 @@ body:
       options:
         - label: Read the [Contributing Guidelines](../blob/main/.github/CONTRIBUTING_DOC/CONTRIBUTING.md).
           required: true
-        - label: Check that there isn't [already an issue](../) that reports the same bug to avoid creating a duplicate.
+        - label: Check that there isn't [already an issue](../issues) that reports the same bug to avoid creating a duplicate.
           required: true
         - label: Checked that the bug isn't fixed in the `next` version already.
           required: true
