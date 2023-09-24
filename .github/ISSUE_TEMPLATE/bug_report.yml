@@ -48,7 +48,6 @@ body:
       render: shell
       placeholder: |
         get system info by command
-
         # UNIX like
         $ uname -a
         # linux
