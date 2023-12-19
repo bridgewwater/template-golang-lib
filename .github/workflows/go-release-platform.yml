@@ -3,7 +3,7 @@ name: go-release-platform
 on:
   workflow_call: # https://docs.github.com/actions/using-workflows/reusing-workflows#using-inputs-and-secrets-in-a-reusable-workflow
     inputs:
-      verison_name:
+      version_name:
         description: 'most of this use tag name'
         default: ''
         required: false
