@@ -8,7 +8,7 @@ permissions:
 
 jobs:
   golang-ci:
-    name: glang-ci
+    name: golang-ci
     strategy:
       matrix:
         go:
