@@ -124,4 +124,6 @@ func Test_test_data_json(t *testing.T) {
 	}
 	// verify _test_data_json
 	assert.Equal(t, data.CiBuildNumber, readData.CiBuildNumber)
+
+	printEnvPrefix(t, "CI_")
 }

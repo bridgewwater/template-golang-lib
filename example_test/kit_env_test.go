@@ -118,3 +118,16 @@ func setEnvInt64(t *testing.T, key string, val int64) {
 		t.Fatalf("set env key [%v] int64 err: %v", key, err)
 	}
 }
+
+// printEnvPrefix
+//
+//	print env by prefix
+//
+//nolint:golint,unused
+func printEnvPrefix(t *testing.T, prefix string) {
+	for _, e := range os.Environ() {
+		if strings.Index(e, prefix) == 0 {
+			t.Logf("printEnvPrefix [ %s ]: %s\n", prefix, e)
+		}
+	}
+}
