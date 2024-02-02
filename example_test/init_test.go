@@ -15,7 +15,7 @@ import (
 const (
 	defTimeoutSecond = 10
 	keyEnvDebug      = "CI_DEBUG"
-	keyEnvCiNum      = "CI"
+	keyEnvCiNum      = "CI_NUMBER"
 	keyEnvCiKey      = "CI_KEY"
 	keyEnvCiKeys     = "CI_KEYS"
 )
