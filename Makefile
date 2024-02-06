@@ -136,6 +136,12 @@ style: modTidy modVerify modFmt modLintRun
 
 ci: modTidy modVerify modFmt modVet modLintRun test
 
+ciTestBenchmark: modTidy modVerify testBenchmark
+
+ciCoverageShow: modTidy modVerify modVet testCoverage testCoverageShow
+
+ciAll: ci ciTestBenchmark ciCoverageShow
+
 buildMain:
 	@echo "-> start build local OS: ${PLATFORM} ${OS_BIT}"
 ifeq ($(OS),Windows_NT)
@@ -185,7 +191,11 @@ endif
 	@echo "~> make testCoverageBrowser - see coverage at browser --invert-match by config"
 	@echo "~> make testBenchmark       - run go test benchmark case all"
 	@echo "~> make ci                  - run CI tools tasks"
+	@echo "~> make ciTestBenchmark     - run CI tasks as test benchmark"
+	@echo "~> make ciCoverageShow      - run CI tasks as test coverage and show"
+	@echo "~> make ciAll               - run CI tasks all"
 	@echo "~> make style               - run local code fmt and style check"
+	@echo "~> make devHelp             - run as develop mode see help with ${ENV_RUN_INFO_HELP_ARGS}"
 	@echo "~> make dev                 - run as develop mode"
 	@echo "~> make runHelp             - run use ${ENV_RUN_INFO_HELP_ARGS}"
 
