@@ -9,18 +9,15 @@ const randomStrLetterCnt = 62
 
 var randomStrLetters = []byte("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
 
-var randSeed *rand.Rand
-
 // randomStr
 //
 //	new random string by cnt
 func randomStr(cnt uint) string {
 	result := make([]byte, cnt)
-	if randSeed == nil {
-		randSeed = rand.New(rand.NewSource(time.Now().Unix()))
-	}
+	rs := rand.New(rand.NewSource(time.Now().Unix()))
 	for i := range result {
-		result[i] = randomStrLetters[randSeed.Intn(randomStrLetterCnt)]
+		index := rs.Intn(randomStrLetterCnt)
+		result[i] = randomStrLetters[index]
 	}
 	return string(result)
 }
@@ -29,8 +26,6 @@ func randomStr(cnt uint) string {
 //
 //	new random int by max
 func randomInt(max int) int {
-	if randSeed == nil {
-		randSeed = rand.New(rand.NewSource(time.Now().Unix()))
-	}
-	return randSeed.Intn(max)
+	rs := rand.New(rand.NewSource(time.Now().Unix()))
+	return rs.Intn(max)
 }
