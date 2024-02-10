@@ -35,4 +35,8 @@ func TestEnvKeys(t *testing.T) {
 	assert.Equal(t, "foo", envArray[0])
 	assert.Equal(t, "bar", envArray[1])
 	assert.Equal(t, "My", envArray[2])
+
+	t.Logf("~> verify EnvKeys: \n%s", findAllEnvByPrefix4Print("CI_"))
+	envByPrefix := findAllEnvByPrefix("CI_")
+	t.Logf("~> print findAllEnvByPrefix: %v", envByPrefix)
 }

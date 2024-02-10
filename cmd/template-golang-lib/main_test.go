@@ -12,7 +12,7 @@ import (
 func Test_package_main(t *testing.T) {
 
 	cmd := exec.Command(os.Args[0], "-h")
-	cmd.Env = append(os.Environ(), "ENV_WEB_AUTO_HOST=true")
+	cmd.Env = append(os.Environ(), "CI_DEBUG=true")
 	var outStd bytes.Buffer
 	cmd.Stdout = &outStd
 	var errStd bytes.Buffer
@@ -27,7 +27,7 @@ func Test_package_main(t *testing.T) {
 
 func Test_package_main_error(t *testing.T) {
 	cmdFail := exec.Command(os.Args[0], "--error.arg")
-	cmdFail.Env = append(os.Environ(), "ENV_WEB_AUTO_HOST=true")
+	cmdFail.Env = append(os.Environ(), "CI_DEBUG=true")
 	err := cmdFail.Run()
 	var e *exec.ExitError
 	if errors.As(err, &e) {

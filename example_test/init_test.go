@@ -35,7 +35,7 @@ func init() {
 	testBaseFolderPath, _ = getCurrentFolderPath()
 
 	envDebug = fetchOsEnvBool(keyEnvDebug, false)
-	envCiNum = fetchOsEnvInt(keyEnvCiNum, 1)
+	envCiNum = fetchOsEnvInt(keyEnvCiNum, 0)
 	envCiKey = fetchOsEnvStr(keyEnvCiKey, "")
 	envCiKeys = fetchOsEnvArray(keyEnvCiKeys)
 }
@@ -387,17 +387,56 @@ func setEnvInt64(t *testing.T, key string, val int64) {
 	}
 }
 
-// printEnvPrefix
+// findAllEnvByPrefix4Print
 //
-//	print env by prefix
+//	find out all env by prefix for print
+//	if not found will return ""
 //
 //nolint:golint,unused
-func printEnvPrefix(t *testing.T, prefix string) {
+func findAllEnvByPrefix4Print(prefix string) string {
+	var sb strings.Builder
 	for _, e := range os.Environ() {
 		if strings.Index(e, prefix) == 0 {
-			t.Logf("printEnvPrefix [ %s ]: %s\n", prefix, e)
+			sb.WriteString(e)
+			sb.WriteString("\n")
 		}
 	}
+	if sb.Len() > 0 {
+		return sb.String()
+	}
+	return ""
+}
+
+// findAllEnvByPrefix
+//
+//	find out all env by prefix
+//	if not found will return nil
+//
+//nolint:golint,unused
+func findAllEnvByPrefix(prefix string) map[string]string {
+	var out map[string]string
+	for _, e := range os.Environ() {
+		if strings.Index(e, prefix) == 0 {
+			envSplit := strings.Split(e, "=")
+			if len(envSplit) > 1 {
+				if out == nil {
+					out = make(map[string]string)
+				}
+				out[envSplit[0]] = envSplit[1]
+			} else if len(envSplit) > 0 {
+				if out == nil {
+					out = make(map[string]string)
+				}
+				out[envSplit[0]] = ""
+			} else {
+				continue
+			}
+		}
+	}
+	if len(out) > 0 {
+		return out
+	}
+	return nil
 }
 
 // test case basic tools end

@@ -14,7 +14,7 @@ services:
       dockerfile : build.dockerfile
     environment:
       - ENV_WEB_HTTPS_ENABLE=false
-      - ENV_WEB_AUTO_HOST=false
+      - CI_DEBUG=false
     # working_dir: "/app"
     # command: ["make", "dev"]
     restart: on-failure:3 # can set always | on-failure:3 | unless-stopped

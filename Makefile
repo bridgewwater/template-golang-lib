@@ -152,7 +152,7 @@ else
 	@echo "-> finish build out path: ${ENV_ROOT_BUILD_BIN_PATH}"
 endif
 
-dev: export ENV_WEB_AUTO_HOST=true
+dev: export CI_DEBUG=true
 dev: cleanBuild buildMain
 ifeq ($(OS),Windows_NT)
 	$(subst /,\,${ENV_ROOT_BUILD_BIN_PATH}).exe ${ENV_RUN_INFO_ARGS}
@@ -160,7 +160,7 @@ else
 	${ENV_ROOT_BUILD_BIN_PATH} ${ENV_RUN_INFO_ARGS}
 endif
 
-runHelp: export CLI_VERBOSE=false
+runHelp: export CI_DEBUG=false
 runHelp:
 	go run -v ${ENV_ROOT_BUILD_ENTRANCE} ${ENV_RUN_INFO_HELP_ARGS}
 
