@@ -168,15 +168,10 @@ helpProjectRoot:
 	@echo "Help: Project root Makefile"
 ifeq ($(OS),Windows_NT)
 	@echo ""
-	@echo "warning: other install make cli tools has bug, please use: scoop install main/make"
+	@echo "warning: other install make cli tools has bug"
 	@echo " run will at make tools version 4.+"
 	@echo "windows use this kit must install tools blow:"
-	@echo ""
-	@echo "https://scoop.sh/#/apps?q=busybox&s=0&d=1&o=true"
-	@echo "-> scoop install main/busybox"
-	@echo "and"
-	@echo "https://scoop.sh/#/apps?q=shasum&s=0&d=1&o=true"
-	@echo "-> scoop install main/shasum"
+	@echo "-> scoop install main/make"
 	@echo ""
 endif
 	@echo "-- now build name: ${ROOT_NAME} version: ${ENV_DIST_VERSION}"
