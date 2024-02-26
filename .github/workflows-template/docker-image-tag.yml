@@ -1,24 +1,27 @@
-# this is a workflow must has secrets.DOCKERHUB_TOKEN
+# this is a workflow must has secrets
+# - DOCKERHUB_OWNER
+# - DOCKERHUB_REPO_NAME
+# - DOCKERHUB_TOKEN
 name: docker-image-tag
 
 on:
   workflow_call: # https://docs.github.com/actions/using-workflows/reusing-workflows#using-inputs-and-secrets-in-a-reusable-workflow
     inputs:
-      docker_hub_user:
-        description: 'name of docker hub user'
-        default: ''
-        required: true
-        type: string
-      docker_image_name:
-        description: 'name of docker image'
-        default: ''
-        required: true
-        type: string
       push_remote_flag:
         description: 'flag for push to remote'
         default: true
         required: false
         type: boolean
+    secrets:
+      DOCKERHUB_OWNER:
+        description: 'docker hub owner'
+        required: true
+      DOCKERHUB_REPO_NAME:
+        description: 'docker hub registry name'
+        required: true
+      DOCKERHUB_TOKEN:
+        description: 'docker hub token'
+        required: false
 
 env:
   DOCKER_IMAGE_PLATFORMS: linux/amd64,linux/arm64/v8 # change to your platforms for release
@@ -43,7 +46,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ inputs.docker_image_name }}
+          images: ${{ secrets.DOCKERHUB_OWNER }}/${{ secrets.DOCKERHUB_REPO_NAME }}
           tags: |
             # type semver https://github.com/docker/metadata-action#typesemver
             type=semver,pattern={{version}}
@@ -81,7 +84,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ inputs.docker_image_name }}
+          images: ${{ secrets.DOCKERHUB_OWNER }}/${{ secrets.DOCKERHUB_REPO_NAME }}
           tags: |
             # type semver https://github.com/docker/metadata-action#typesemver
             type=semver,pattern={{version}}
@@ -92,7 +95,7 @@ jobs:
         name: "Login into registry as user: inputs.docker_hub_user"
         uses: docker/login-action@v3
         with:
-          username: ${{ inputs.docker_hub_user }}
+          username: ${{ secrets.DOCKERHUB_OWNER }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
         name: Set up Docker Buildx

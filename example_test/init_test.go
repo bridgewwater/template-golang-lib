@@ -33,7 +33,7 @@ func init() {
 	envDebug = env_kit.FetchOsEnvBool(keyEnvDebug, false)
 	envCiNum = env_kit.FetchOsEnvInt(keyEnvCiNum, 0)
 	envCiKey = env_kit.FetchOsEnvStr(keyEnvCiKey, "")
-	envCiKeys = env_kit.FetchOsEnvArray(keyEnvCiKeys)
+	envCiKeys = env_kit.FetchOsEnvStringSlice(keyEnvCiKeys)
 
 	testGoldenKit = unittest_file_kit.NewTestGoldenKit(testBaseFolderPath)
 }

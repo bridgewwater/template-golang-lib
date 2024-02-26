@@ -26,12 +26,12 @@ func TestEnvKeys(t *testing.T) {
 	assert.True(t, env_kit.FetchOsEnvBool(keyEnvDebug, false))
 	assert.Equal(t, 2, env_kit.FetchOsEnvInt(keyEnvCiNum, 0))
 	assert.Equal(t, "foo", env_kit.FetchOsEnvStr(keyEnvCiKey, ""))
-	envArray := env_kit.FetchOsEnvArray(keyEnvs)
+	envArray := env_kit.FetchOsEnvStringSlice(keyEnvs)
 	assert.Nil(t, envArray)
 
 	unittest_env_kit.SetEnvStr(t, keyEnvs, "foo, bar,My ")
 
-	envArray = env_kit.FetchOsEnvArray(keyEnvs)
+	envArray = env_kit.FetchOsEnvStringSlice(keyEnvs)
 
 	assert.NotNil(t, envArray)
 	assert.Equal(t, "foo", envArray[0])
