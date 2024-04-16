@@ -30,7 +30,7 @@ on:
     #   - 'DOC-*'
     #   - 'hotfix-*'
 
-permissions:
+permissions: # https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#permissions
   contents: write
   discussions: write
 

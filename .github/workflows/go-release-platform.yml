@@ -1,5 +1,9 @@
 name: go-release-platform
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 on:
   workflow_call: # https://docs.github.com/actions/using-workflows/reusing-workflows#using-inputs-and-secrets-in-a-reusable-workflow
     inputs:
@@ -18,7 +22,7 @@ env:
   DIST_BINARY_NAME: template-golang-lib # to change your binary name, windows will auto add .exe
   DIST_BUILD_ENTRANCE: cmd/template-golang-lib/main.go # to change your build entrance
 
-permissions:
+permissions: # https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#permissions
   contents: write
 
 jobs:
