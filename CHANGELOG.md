@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [1.1.0](https://github.com/bridgewwater/template-golang-lib/compare/1.0.0...v1.1.0) (2024-04-28)
+
+### 🐛 Bug Fixes
+
+* update temp-golang-lib for fast add lib ([d0c21384](https://github.com/bridgewwater/template-golang-lib/commit/d0c21384e8c992b7352787c001ae085e5fd6690c))
+
+### ✨ Features
+
+* update full docker build pipeline of this project ([30cfaf5d](https://github.com/bridgewwater/template-golang-lib/commit/30cfaf5da7f1b8cbad43aa2ab2d1e33144efb6a0))
+
+* update github.com/sinlov-go/unittest-kit v1.1.0 ([8f24849e](https://github.com/bridgewwater/template-golang-lib/commit/8f24849e54a897196f053ac5f4f25d962a9e4b39))
+
+* use github.com/sinlov-go/unittest-kit ([21907873](https://github.com/bridgewwater/template-golang-lib/commit/21907873a97c0f54b5580c6c8736593671649aa0))
+
+* change env to CI_DEBUG to change unit test case flag ([8a5f3961](https://github.com/bridgewwater/template-golang-lib/commit/8a5f3961c190aac778eff8379ed94b7b76a13b44))
+
+### ♻ Refactor
+
+* remove useless example_test/TestMain.go ([5493d8db](https://github.com/bridgewwater/template-golang-lib/commit/5493d8dbe57133ae8f14ac0cea1f4d31dcf6f29c))
+
+* change example test case kit for fast use ([e5dbc431](https://github.com/bridgewwater/template-golang-lib/commit/e5dbc4315152f7279e5ba1a9a1763e85243a8d00))
+
+* change example_test to different file ([f4d52850](https://github.com/bridgewwater/template-golang-lib/commit/f4d528509e8ff5c560bb0ee7247561a33af17988))
+
+### 👷‍ Build System
+
+* bump github.com/stretchr/testify from 1.8.4 to 1.9.0 ([3eefca96](https://github.com/bridgewwater/template-golang-lib/commit/3eefca963c6c837aab17467d2bb4bf1862d102c9))
+
+* z-MakefileUtils/MakeGoMod.mk go vet use -tags ([77be0cbf](https://github.com/bridgewwater/template-golang-lib/commit/77be0cbf00f5a556b6a9ac756da06d048ffc1ec3))
+
+* update local make kit ([5466b928](https://github.com/bridgewwater/template-golang-lib/commit/5466b92833d66b047ffa31e676d36927fd632bfc))
+
 ## 1.0.0 (2024-01-22)
 
 ### 🐛 Bug Fixes
