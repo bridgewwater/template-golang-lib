@@ -1,11 +1,16 @@
 #!/usr/bin/env bash
 
+# and this use tag
+temple_version='1.1.0'
+new_version_for_dev='1.0.0'
+go_minimum_version='1.19'
+
 #temple url
 temple_url="https://github.com/bridgewwater/template-golang-lib.git"
 temple_repo_host="github.com"
 temple_group="bridgewwater"
 temple_name="template-golang-lib"
-temple_branch="main"
+temple_branch="v${temple_version}"
 
 new_repo_host=${temple_repo_host}
 new_repo_group=${temple_group}
@@ -20,8 +25,9 @@ shell_run_path=$(
 function Usage() {
   cat <<HELP
 ${shell_run_name} can use fast init golang lib project with github
-  Warning must use golang SDK 1.17+
-  now temple is ${temple_url}
+  Warning must use golang SDK ${go_minimum_version}+
+  now template url is:  ${temple_url}
+  now template version: ${temple_branch}
 
 default repo setting
   group/user: ${temple_group}
@@ -69,7 +75,7 @@ checkFuncBack() {
 }
 
 checkBinary() {
-  evn_checker=$(which $1)
+  local evn_checker=$(which $1)
   checkFuncBack "which $1"
   if [ ! -n "$evn_checker" ]; then
     echo -e "\033[;31mCheck event [ $1 ] error exit\033[0m"
@@ -114,9 +120,9 @@ check_sys
 # $3 regular to
 # Error will return 1
 replaceFileByRegular() {
-  target_file=$1
-  word_from=$2
-  word_to=$3
+  local target_file=$1
+  local word_from=$2
+  local word_to=$3
   if [[ -z "${word_from}" ]]; then
     pW "replaceFileByRegular word_from is empty"
     return 1
@@ -141,10 +147,10 @@ replaceFileByRegular() {
 # $4 word_regular_to
 # Error will return 1
 findFileReplaceByRegular() {
-  target_file_root=$1
-  target_file_regular=$2
-  word_regular_from=$3
-  word_regular_to=$4
+  local target_file_root=$1
+  local target_file_regular=$2
+  local word_regular_from=$3
+  local word_regular_to=$4
   if [[ -z "${target_file_root}" ]]; then
     pW "findFileReplaceByRegular target_file_regular is empty"
     return 1
@@ -172,7 +178,7 @@ findFileReplaceByRegular() {
 
 
 removeFileExist() {
-  target_file_path=$1
+  local target_file_path=$1
   if [[ -z "${target_file_path}" ]]; then
     pW "removeFileByRegular target_file_path is empty"
     return 1
@@ -190,7 +196,7 @@ removeFileExist() {
 # $1 target_file_regular
 # Error will return 1
 removeFileByRegular() {
-  target_file_regular=$1
+  local target_file_regular=$1
   if [[ -z "${target_file_regular}" ]]; then
     pW "removeFileByRegular target_file_regular is empty"
     return 1
@@ -269,6 +275,8 @@ replaceFileByRegular ${new_project}/**/*.mk ${temple_group} ${new_repo_group}
 # replaceFileByRegular ${new_project}/package.json ${temple_repo_host}\/${temple_group}\/${temple_name} ${new_repo_host}\/${new_repo_group}\/${new_project}
 # replaceFileByRegular ${new_project}/package.json ${temple_group} ${new_repo_group}
 # replaceFileByRegular ${new_project}/package.json ${temple_name} ${new_project}
+# replaceFileByRegular ${new_project}/package.json ${temple_version} ${new_version_for_dev}
+replaceFileByRegular ${new_project}/.github/workflows-template/docker-buildx-bake/docker-bake.hcl ${temple_name} ${new_project}
 # replace code at folder
 findFileReplaceByRegular ${new_project} "*.go" ${temple_repo_host}\/${temple_group}\/${temple_name} ${new_repo_host}\/${new_repo_group}\/${new_project}
 findFileReplaceByRegular ${new_project} "*.go" ${temple_group} ${new_repo_group}
