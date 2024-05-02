@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [1.2.0](https://github.com/bridgewwater/template-golang-lib/compare/1.1.0...v1.2.0) (2024-05-03)
+
+### ✨ Features
+
+* add auto-merge-dependabot.yml for auto merge ([23470966](https://github.com/bridgewwater/template-golang-lib/commit/23470966cdb1ffb3e99e6236f3e23231ecbb6e88))
+
+### 📝 Documentation
+
+* update usage of `cli tools to init project fast` ([0b99e681](https://github.com/bridgewwater/template-golang-lib/commit/0b99e681929dfdbe8df031f7d1c49e0d563c833f))
+
+### 👷‍ Build System
+
+* bump golangci/golangci-lint-action from 4 to 5 ([36cfffc5](https://github.com/bridgewwater/template-golang-lib/commit/36cfffc5ce9e2a7ad1902c15b16cdc7e7061ba5f))
+
+* bump convention-change/conventional-version-check ([8dde0d2d](https://github.com/bridgewwater/template-golang-lib/commit/8dde0d2d1bd047ad5ba60d1ed6e354c490537706))
+
 ## [1.1.0](https://github.com/bridgewwater/template-golang-lib/compare/1.0.0...v1.1.0) (2024-04-28)
 
 ### 🐛 Bug Fixes
