@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [1.3.0](https://github.com/bridgewwater/template-golang-lib/compare/1.2.0...v1.3.0) (2024-05-17)
+
+### ✨ Features
+
+* update make template ([76bb553e](https://github.com/bridgewwater/template-golang-lib/commit/76bb553ebc4fc9565a6a1470100631b905f261bf))
+
 ## [1.2.0](https://github.com/bridgewwater/template-golang-lib/compare/1.1.0...v1.2.0) (2024-05-03)
 
 ### ✨ Features
