@@ -13,7 +13,7 @@
 ### cli tools to init project fast
 
 ```bash
-$ v=1.1.0; curl -L --fail https://raw.githubusercontent.com/bridgewwater/template-golang-lib/v$v/temp-golang-lib -o temp-golang-lib
+$ v=1.3.0; curl -L --fail https://raw.githubusercontent.com/bridgewwater/template-golang-lib/v$v/temp-golang-lib -o temp-golang-lib
 # let temp-golang-lib file folder under $PATH
 $ chmod +x temp-golang-lib
 # see how to use
@@ -69,11 +69,6 @@ $ echo "go mod vendor"
 - [ ] more perfect test case coverage
 - [ ] more perfect benchmark case
 
-## env
-
-- minimum go version: go 1.19
-- change `go 1.19`, `^1.19`, `1.19.12-bullseye`, `1.19.12` to new go version
-
 ### libs
 
 | lib                                 | version |
@@ -90,44 +85,6 @@ $ echo "go mod vendor"
     - `bridgewwater` to your owner name
     - `template-golang-lib` to your project name
 
-# dev
+## dev
 
-```bash
-# It needs to be executed after the first use or update of dependencies.
-$ make init dep
-```
-
-- test code
-
-```bash
-$ make test testBenchmark
-```
-
-add main.go file and run
-
-```bash
-# run at env dev use cmd/main.go
-$ make dev
-```
-
-- ci to fast check
-
-```bash
-# check style at local
-$ make style
-
-# run ci at local
-$ make ci
-```
-
-## docker
-
-```bash
-# then test build as test/Dockerfile
-$ make dockerTestRestartLatest
-# clean test build
-$ make dockerTestPruneLatest
-
-# more info see
-$ make helpDocker
-```
+- see [doc/dev.md](doc/dev.md)

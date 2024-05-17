@@ -6,6 +6,7 @@ logs/
 ### build temple
 build/
 dist/
+gosec.json
 
 ### go mod
 
