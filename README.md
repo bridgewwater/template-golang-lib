@@ -87,4 +87,4 @@ $ echo "go mod vendor"
 
 ## dev
 
-- see [doc/dev.md](doc/dev.md)
+- see [dev.md](doc-dev/dev.md)

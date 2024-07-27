@@ -95,6 +95,8 @@ $(info -> change ENV_DIST_VERSION by ENV_CI_DIST_VERSION)
     ENV_DIST_VERSION=${ENV_CI_DIST_VERSION}
 endif
 
+ENV_DIST_CODE_MARK=$(subst -,,${ENV_DIST_MARK})
+
 .PHONY: envHelp
 envBasic:
 	@echo ------- start show env basic---------
@@ -112,6 +114,7 @@ envBasic:
 envDistBasic:
 	@echo "ENV_DIST_VERSION :                        ${ENV_DIST_VERSION}"
 	@echo "ENV_DIST_MARK :                           ${ENV_DIST_MARK}"
+	@echo "ENV_DIST_CODE_MARK :                      ${ENV_DIST_CODE_MARK}"
 	@echo ""
 
 .PHONY: envHelp
