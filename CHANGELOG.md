@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [1.3.1](https://github.com/bridgewwater/template-golang-lib/compare/1.3.0...v1.3.1) (2024-07-28)
+
+### 👷‍ Build System
+
+* support CI inject `buildId` at pipline, and move doc.md to folder `doc-dev` ([ccb5e8ec](https://github.com/bridgewwater/template-golang-lib/commit/ccb5e8ec31fa9052edbac3cb0b44afe7760c68ef))
+
+* bump golangci/golangci-lint-action from 5 to 6 ([3131c3e5](https://github.com/bridgewwater/template-golang-lib/commit/3131c3e5b75994ef24d7eeff9449574b4f8d0db5))
+
 ## [1.3.0](https://github.com/bridgewwater/template-golang-lib/compare/1.2.0...v1.3.0) (2024-05-17)
 
 ### ✨ Features
