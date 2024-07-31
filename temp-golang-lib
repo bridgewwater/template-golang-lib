@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # and this use tag
-temple_version='1.3.3'
+temple_version='1.4.0'
 new_version_for_dev='1.0.0'
 go_minimum_version='1.19'
 

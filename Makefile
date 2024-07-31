@@ -1,6 +1,6 @@
 .PHONY: test check clean build dist all
 #TOP_DIR := $(shell pwd)
-# can change by env:ENV_CI_DIST_VERSION use and change by env:ENV_CI_DIST_MARK by CI
+# can change by env:ENV_CI_DIST_VERSION , env:ENV_CI_DIST_MARK , env:ENV_CI_DIST_CODE_MARK by CI
 ENV_DIST_VERSION =v0.1.2
 ENV_DIST_MARK=
 
