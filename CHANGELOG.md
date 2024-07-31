@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [1.4.1](https://github.com/bridgewwater/template-golang-lib/compare/1.4.0...v1.4.1) (2024-08-01)
+
+### 🐛 Bug Fixes
+
+* fix ci build config at `go-release-platform.yml` ([9b0941b5](https://github.com/bridgewwater/template-golang-lib/commit/9b0941b536cb11a2dae71a103be9bd65186e6220))
+
+### 📝 Documentation
+
+* update usage of `cli tools to init project fast` at README.md ([40086b9a](https://github.com/bridgewwater/template-golang-lib/commit/40086b9a7b65b7ea0aaefeb6057ae1366ef8ae00))
+
 ## [1.4.0](https://github.com/bridgewwater/template-golang-lib/compare/1.3.3...v1.4.0) (2024-08-01)
 
 ### ✨ Features
