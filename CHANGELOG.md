@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [1.3.3](https://github.com/bridgewwater/template-golang-lib/compare/1.3.2...v1.3.3) (2024-08-01)
+
+### ♻ Refactor
+
+* change `dependabot.yml` config of `commit-message` ([97a42c01](https://github.com/bridgewwater/template-golang-lib/commit/97a42c015897e45511b9fcadc213641e13133eed))
+
 ## [1.3.2](https://github.com/bridgewwater/template-golang-lib/compare/1.3.1...v1.3.2) (2024-07-28)
 
 ### 👷‍ Build System
