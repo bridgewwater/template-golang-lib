@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [1.4.0](https://github.com/bridgewwater/template-golang-lib/compare/1.3.3...v1.4.0) (2024-08-01)
+
+### ✨ Features
+
+* change `make` task use `ENV_CI_DIST_CODE_MARK` and ci inject main.buildID ([42c30982](https://github.com/bridgewwater/template-golang-lib/commit/42c30982d9dd282dbdda25d8c3e26736c6625cb2))
+
 ## [1.3.3](https://github.com/bridgewwater/template-golang-lib/compare/1.3.2...v1.3.3) (2024-08-01)
 
 ### ♻ Refactor
