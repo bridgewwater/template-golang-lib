@@ -13,7 +13,7 @@
 ### cli tools to init project fast
 
 ```bash
-$ v=1.3.0; curl -L --fail https://raw.githubusercontent.com/bridgewwater/template-golang-lib/v$v/temp-golang-lib -o temp-golang-lib
+$ v=1.4.0; curl -L --fail https://raw.githubusercontent.com/bridgewwater/template-golang-lib/v$v/temp-golang-lib -o temp-golang-lib
 # let temp-golang-lib file folder under $PATH
 $ chmod +x temp-golang-lib
 # see how to use
