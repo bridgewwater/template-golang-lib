@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [1.4.3](https://github.com/bridgewwater/template-golang-lib/compare/1.4.2...v1.4.3) (2024-08-02)
+
+### 👷‍ Build System
+
+* update makefile script and close `go mod vendor` at github action ([9c7a8f6e](https://github.com/bridgewwater/template-golang-lib/commit/9c7a8f6e931111fa491f18c5ed46304552926f0c))
+
 ## [1.4.2](https://github.com/bridgewwater/template-golang-lib/compare/1.4.1...v1.4.2) (2024-08-01)
 
 ### 📝 Documentation
