@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [1.4.4](https://github.com/bridgewwater/template-golang-lib/compare/1.4.3...v1.4.4) (2024-08-02)
+
+### 👷‍ Build System
+
+* update make task `helpDocker` at PHONY ([86a5fa54](https://github.com/bridgewwater/template-golang-lib/commit/86a5fa545b56bb14d90db1bb9b9acff7749917ab))
+
 ## [1.4.3](https://github.com/bridgewwater/template-golang-lib/compare/1.4.2...v1.4.3) (2024-08-02)
 
 ### 👷‍ Build System
