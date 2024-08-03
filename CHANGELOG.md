@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [1.4.5](https://github.com/bridgewwater/template-golang-lib/compare/1.4.4...v1.4.5) (2024-08-03)
+
+### 👷‍ Build System
+
+* update config of `.gitattributes` ([c820ba7a](https://github.com/bridgewwater/template-golang-lib/commit/c820ba7a2bdac3b71038fda5b85ff68bf27bfd11))
+
 ## [1.4.4](https://github.com/bridgewwater/template-golang-lib/compare/1.4.3...v1.4.4) (2024-08-02)
 
 ### 👷‍ Build System
