@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [1.4.6](https://github.com/bridgewwater/template-golang-lib/compare/1.4.5...v1.4.6) (2024-08-09)
+
+### 🐛 Bug Fixes
+
+* `temp-golang-lib` change file target of doc-dev/dev.md ([249becd5](https://github.com/bridgewwater/template-golang-lib/commit/249becd5b95ba486de1608b7cd9c2cd107c34ee3))
+
 ## [1.4.5](https://github.com/bridgewwater/template-golang-lib/compare/1.4.4...v1.4.5) (2024-08-03)
 
 ### 👷‍ Build System
