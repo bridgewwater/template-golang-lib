@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # and this use tag
-temple_version='1.4.5'
+temple_version='1.4.6'
 new_version_for_dev='1.0.0'
 go_minimum_version='1.19'
 
@@ -260,10 +260,10 @@ replaceFileByRegular ${new_project}/README.md ${temple_repo_host}\/${temple_grou
 replaceFileByRegular ${new_project}/README.md ${temple_group}\/${temple_name} ${new_repo_group}\/${new_project}
 replaceFileByRegular ${new_project}/README.md ${temple_name} ${new_project}
 replaceFileByRegular ${new_project}/README.md ${temple_repo_host} ${new_repo_host}
-replaceFileByRegular ${new_project}/doc/dev.md ${temple_repo_host}\/${temple_group}\/${temple_name} ${new_repo_host}\/${new_repo_group}\/${new_project}
-replaceFileByRegular ${new_project}/doc/dev.md ${temple_group}\/${temple_name} ${new_repo_group}\/${new_project}
-replaceFileByRegular ${new_project}/doc/dev.md ${temple_name} ${new_project}
-replaceFileByRegular ${new_project}/doc/dev.md ${temple_repo_host} ${new_repo_host}
+replaceFileByRegular ${new_project}/doc-dev/dev.md ${temple_repo_host}\/${temple_group}\/${temple_name} ${new_repo_host}\/${new_repo_group}\/${new_project}
+replaceFileByRegular ${new_project}/doc-dev/dev.md ${temple_group}\/${temple_name} ${new_repo_group}\/${new_project}
+replaceFileByRegular ${new_project}/doc-dev/dev.md ${temple_name} ${new_project}
+replaceFileByRegular ${new_project}/doc-dev/dev.md ${temple_repo_host} ${new_repo_host}
 replaceFileByRegular ${new_project}/Dockerfile ${temple_group}\/${temple_name} ${new_repo_group}\/${new_project}
 replaceFileByRegular ${new_project}/Dockerfile ${temple_group} ${new_repo_group}
 replaceFileByRegular ${new_project}/Dockerfile ${temple_name} ${new_project}
@@ -339,6 +339,7 @@ mit*)
   mv ./${new_project}/LICENSE-APACHE ./${new_project}/LICENSE
   ;;
 esac
+
 # move other LICENCE
 removeFileByRegular "LICENSE-*"
 # replace LICENSE by git info
