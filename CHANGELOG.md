@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [1.5.0](https://github.com/bridgewwater/template-golang-lib/compare/1.4.6...v1.5.0) (2024-12-20)
+
+### 📝 Documentation
+
+* update temp-golang-lib version to 1.5.0 and Go minimum version to 1.20 ([cfad43c2](https://github.com/bridgewwater/template-golang-lib/commit/cfad43c2e79844b376ceec874a4b23221de4ccc0))
+
+### 👷‍ Build System
+
+* update Go version to 1.20 ([000d14d8](https://github.com/bridgewwater/template-golang-lib/commit/000d14d8b980f4771e478533847d6cd973d3646c)), re [#21](https://github.com/bridgewwater/template-golang-lib/issues/21)
+
+* bump github.com/stretchr/testify from 1.9.0 to 1.10.0 ([f6045426](https://github.com/bridgewwater/template-golang-lib/commit/f6045426e9c455798447b05c3fd7b7ef64ddf7f2))
+
+* bump github.com/sinlov-go/unittest-kit from 1.1.1 to 1.2.1 ([4dfa4785](https://github.com/bridgewwater/template-golang-lib/commit/4dfa4785c40f04a21b97a06528d228fbd5c85df6))
+
+* bump github.com/sinlov-go/unittest-kit from 1.1.0 to 1.1.1 ([32ce618d](https://github.com/bridgewwater/template-golang-lib/commit/32ce618d27f7969f0233808afb7a6ecef47e0e22))
+
+* bump github.com/sebdah/goldie/v2 from 2.5.3 to 2.5.5 ([963e71d7](https://github.com/bridgewwater/template-golang-lib/commit/963e71d78b61e5c2c7bb9bb476aa326c1a2f41fe))
+
 ## [1.4.6](https://github.com/bridgewwater/template-golang-lib/compare/1.4.5...v1.4.6) (2024-08-09)
 
 ### 🐛 Bug Fixes
