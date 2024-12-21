@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [1.5.1](https://github.com/bridgewwater/template-golang-lib/compare/1.5.0...v1.5.1) (2024-12-21)
+
+### 👷‍ Build System
+
+* update release action and bump version to 1.5.1 ([fc694d0e](https://github.com/bridgewwater/template-golang-lib/commit/fc694d0e45f8d351ed05fa96ce2125c97e6cbff5))
+
 ## [1.5.0](https://github.com/bridgewwater/template-golang-lib/compare/1.4.6...v1.5.0) (2024-12-20)
 
 ### 📝 Documentation
