@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [1.5.2](https://github.com/bridgewwater/template-golang-lib/compare/1.5.1...v1.5.2) (2025-01-17)
+
+### 👷‍ Build System
+
+* add task for updating Go modules ([422a3124](https://github.com/bridgewwater/template-golang-lib/commit/422a31246022479674337f1bf698f860d90d2236))
+
 ## [1.5.1](https://github.com/bridgewwater/template-golang-lib/compare/1.5.0...v1.5.1) (2024-12-21)
 
 ### 👷‍ Build System
