@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [1.6.0](https://github.com/bridgewwater/template-golang-lib/compare/1.5.2...v1.6.0) (2025-01-18)
+
+### ✨ Features
+
+* update temple version to 1.6.0 ([923e7988](https://github.com/bridgewwater/template-golang-lib/commit/923e7988805ffee21e710f15a18c1766809c9477)), feat [#23](https://github.com/bridgewwater/template-golang-lib/issues/23)
+
+### 👷‍ Build System
+
+* update GitHub Actions dependencies ([85315c05](https://github.com/bridgewwater/template-golang-lib/commit/85315c058349a8df144592c59dfbedc64bfd273e)), feat [#23](https://github.com/bridgewwater/template-golang-lib/issues/23)
+
 ## [1.5.2](https://github.com/bridgewwater/template-golang-lib/compare/1.5.1...v1.5.2) (2025-01-17)
 
 ### 👷‍ Build System
