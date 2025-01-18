@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       -
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: 'Dependency Review' # https://github.com/actions/dependency-review-action
         uses: actions/dependency-review-action@v3
         with:
