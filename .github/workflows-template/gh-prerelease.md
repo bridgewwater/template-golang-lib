@@ -21,7 +21,7 @@ jobs:
     name: gh-prerelease
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - uses: softprops/action-gh-release@master
         name: Create Release
