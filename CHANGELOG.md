@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [1.7.0](https://github.com/bridgewwater/template-golang-lib/compare/1.6.0...v1.7.0) (2025-03-10)
+
+### ✨ Features
+
+* update temple version and improve remote version finding ([2807c076](https://github.com/bridgewwater/template-golang-lib/commit/2807c076fd78774f4dcf5695160670ed654dbbdc))
+
+* add functionality to export API documentation ([403c4f87](https://github.com/bridgewwater/template-golang-lib/commit/403c4f879384858a42035d26156d5a5a9b462dab))
+
+* add example test cases for template-golang-lib ([204338be](https://github.com/bridgewwater/template-golang-lib/commit/204338beb57820f9b5e2ae40446a7e24f44141d6))
+
+### ♻ Refactor
+
+* restructure project layout and improve documentation ([8db96ca6](https://github.com/bridgewwater/template-golang-lib/commit/8db96ca6427c984167f809386376acc3734b2994))
+
+### 👷‍ Build System
+
+* add configurable test and linting options ([4a3155fc](https://github.com/bridgewwater/template-golang-lib/commit/4a3155fcebc90b09fe165bd07a3950fc2f5f2320))
+
 ## [1.6.0](https://github.com/bridgewwater/template-golang-lib/compare/1.5.2...v1.6.0) (2025-01-18)
 
 ### ✨ Features
