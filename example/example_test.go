@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-// To use template-golang-lib lib package, just
+// To use this lib package, just
 // the SetOutput function when your application starts.
 func Example() {
 	// Basic usage of this lib
