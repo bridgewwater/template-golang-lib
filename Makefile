@@ -37,6 +37,7 @@ ENV_ROOT_TEST_MAX_TIME :=1m
 
 ## godoc start
 ENV_GO_GODOC_PORT_NUMBER=36060
+ENV_GO_GODOC_EXPORT_PATH=doc
 include z-MakefileUtils/go-doc.mk
 ## godoc end
 
