@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [1.7.1](https://github.com/bridgewwater/template-golang-lib/compare/1.7.0...v1.7.1) (2025-03-10)
+
+### 👷‍ Build System
+
+* update godoc configuration and export functionality ([dd7e876b](https://github.com/bridgewwater/template-golang-lib/commit/dd7e876b937270f59ff8073888c2f168e5903ef0))
+
 ## [1.7.0](https://github.com/bridgewwater/template-golang-lib/compare/1.6.0...v1.7.0) (2025-03-10)
 
 ### ✨ Features
