@@ -2,6 +2,28 @@ name: golang-ci
 
 on:
   workflow_call: # https://docs.github.com/actions/using-workflows/reusing-workflows#using-inputs-and-secrets-in-a-reusable-workflow
+    inputs:
+      run_test_case:
+        description: 'test run flag'
+        default: true
+        required: false
+        type: boolean
+      run_golangci_lint:
+        description: 'run golangci-lint flag'
+        default: true
+        required: false
+        type: boolean
+      run_benchmark:
+        description: 'test benchmark run flag'
+        default: false
+        required: false
+        type: boolean
+      run_test_coverage:
+        description: 'test coverage run flag'
+        default: true
+        required: false
+        type: boolean
+
 
 permissions: # https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#permissions
   contents: read
@@ -37,7 +59,12 @@ jobs:
       - name: Run go build
         run: go build -v -tags test ./...
 
+      - name: Run test
+        if: ${{ inputs.run_test_case }}
+        run: go test -v -tags test ./...
+
       - name: Run golangci-lint
+        if: ${{ inputs.run_golangci_lint }}
         uses: golangci/golangci-lint-action@v6
         with:
           # Require: The version of golangci-lint to use.
@@ -74,13 +101,12 @@ jobs:
           # Optional: The mode to install golangci-lint. It can be 'binary' or 'goinstall'.
           # install-mode: "goinstall"
 
-      - name: Run test
-        run: go test -v -tags test ./...
-
       - name: Run test benchmark
+        if: ${{ inputs.run_benchmark }}
         run: go test -run none -tags test -bench . -benchmem -v ./...
 
       - name: Run test coverage
+        if: ${{ inputs.run_test_coverage }}
         run: |
           go test -cover -tags test -coverprofile coverage.txt -covermode count -coverpkg ./... -v ./...
           go tool cover -func coverage.txt

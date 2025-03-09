@@ -126,7 +126,8 @@ go.mod.lint.run:
 
 .PHONY: help.go.mod
 help.go.mod:
-	@echo "Help: MakeGoMod.mk"
+	@echo "Help: go-mod.mk"
+	@echo ""
 	@echo "-> go mod document at: https://go.dev/ref/mod"
 	@echo "this project use go mod, so golang version must 1.12+"
 	@echo "~> make go.mod.name                  - will show this go mod name"
