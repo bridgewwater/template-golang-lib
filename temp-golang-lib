@@ -1,16 +1,18 @@
 #!/usr/bin/env bash
 
 # and this use tag
-temple_version='1.6.0'
+temple_version='1.7.0'
 new_version_for_dev='1.0.0'
 go_minimum_version='1.20'
 
 #temple url
 temple_url="https://github.com/bridgewwater/template-golang-lib.git"
+# temple_url="git@github.com:bridgewwater/template-golang-lib.git"
 temple_repo_host="github.com"
 temple_group="bridgewwater"
 temple_name="template-golang-lib"
 temple_branch="v${temple_version}"
+is_find_out_remote_temple_version=1
 
 new_repo_host=${temple_repo_host}
 new_repo_group=${temple_group}
@@ -22,7 +24,49 @@ shell_run_path=$(
   pwd
 )
 
+## need global var
+# will use global var
+# - is_find_out_remote_temple_version
+# will change global var
+# - temple_version
+# - temple_branch
+find_out_remote_temple_version() {
+  local remote_tag_url=$1
+  if [[ $is_find_out_remote_temple_version -eq 0 ]]; then
+    echo "-> pass find out remote latest version from repo: ${remote_tag_url}"
+    return 0
+  fi
+  # echo "=> start find out remote latest version from repo: ${remote_tag_url}"
+  local remote_tag_match='refs/tags/[^ ]*'
+  local remote_tag_sed_command='s#refs/tags/##'
+  local remote_latest_tag_name=$(git ls-remote --refs --tags ${remote_tag_url} | cut -f2 | grep -E "${remote_tag_match}" | sort -V | tail -n 1 | sed ${remote_tag_sed_command})
+  if [ ! $? -eq 0 ]; then
+    echo "not found remote latest tag by: ${remote_tag_url}"
+    return 1
+  else
+    # echo "remote_latest_tag_name=$remote_latest_tag_name"
+    # empty tag
+    if [[ -z "$remote_latest_tag_name" ]]; then
+      echo "-> remote tag is empty by: ${remote_tag_url}"
+      return 1
+    fi
+    if [[ $remote_latest_tag_name == v* ]]; then # Judge whether to start with v
+      temple_version=${remote_latest_tag_name:1}
+      temple_branch="v${temple_version}"
+    else
+      pW "remote latest tag not start with v, please check from: ${remote_tag_url}"
+      temple_version=${remote_latest_tag_name}
+      temple_branch="v${temple_version}"
+    fi
+  fi
+  # echo "-> find out remote tag info:"
+  # echo "temple_version =${temple_version}"
+  # echo "temple_branch  =${temple_branch}"
+  # echo "=> finish find out remote tag version"
+}
+
 function Usage() {
+  find_out_remote_temple_version ${temple_url}
   cat <<HELP
 ${shell_run_name} can use fast init golang lib project with github
   Warning must use golang SDK ${go_minimum_version}+
@@ -31,7 +75,7 @@ ${shell_run_name} can use fast init golang lib project with github
 
 default repo setting
   group/user: ${temple_group}
-  reop host : ${temple_repo_host}
+  repo host : ${temple_repo_host}
 
 Usage: ${shell_run_name} [newproject] [new group/user] [new host]
 
@@ -271,6 +315,8 @@ else
   new_repo_host=${temple_repo_host}
 fi
 
+find_out_remote_temple_version ${temple_url}
+
 echo -e "=> temple url: ${temple_url}
 => temple_branch:  ${temple_branch}
 -> new_repo_host:  ${new_repo_host}
@@ -281,6 +327,7 @@ echo -e "=> temple url: ${temple_url}
 
 pI "Clone from ${temple_url}"
 git clone --depth 1 ${temple_url} -b ${temple_branch} ${new_project}
+checkFuncBack "git clone --depth 1 ${temple_url} -b ${temple_branch} ${new_project}"
 rm -rf ${new_project}/.git/
 sleep 1
 
@@ -372,7 +419,7 @@ mit*)
   ;;
 esac
 
-# move other LICENCE
+# move other LICENSE
 removeFileByRegular "LICENSE-*"
 # replace LICENSE by git info
 license_template_user='{name[[:space:]]of[[:space:]]copyright[[:space:]]owner}'
