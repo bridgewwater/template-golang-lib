@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [1.7.2](https://github.com/bridgewwater/template-golang-lib/compare/1.7.1...v1.7.2) (2025-03-10)
+
+### 📝 Documentation
+
+* update example test documentation ([9ef56f09](https://github.com/bridgewwater/template-golang-lib/commit/9ef56f09fd88c0535612e373c350242e14539e36))
+
 ## [1.7.1](https://github.com/bridgewwater/template-golang-lib/compare/1.7.0...v1.7.1) (2025-03-10)
 
 ### 👷‍ Build System
