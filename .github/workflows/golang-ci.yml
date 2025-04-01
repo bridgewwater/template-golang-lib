@@ -65,7 +65,7 @@ jobs:
 
       - name: Run golangci-lint
         if: ${{ inputs.run_golangci_lint }}
-        uses: golangci/golangci-lint-action@v6
+        uses: golangci/golangci-lint-action@v7
         with:
           # Require: The version of golangci-lint to use.
           # When `install-mode` is `binary` (default) the value can be v1.2 or v1.2.3 or `latest` to use the latest version.
