@@ -2,10 +2,10 @@
 
 ## just start dev
 
-- minimum go version: go 1.20
-- change `go 1.20`, `^1.20`, `1.20.14` to new go version
-- change `golangci-lint@v1.55.2` from [golangci-lint version release](https://github.com/golangci/golangci-lint/releases) to new version
-    - more info see [golangci-lint local-installation](https://golangci-lint.run/usage/install/#local-installation)
+- minimum go version: go 1.23
+- change `go 1.23`, `^1.23`, `1.23.8` to new go version
+- change `golangci-lint@v2.1.6` from [golangci-lint version release](https://github.com/golangci/golangci-lint/releases) to new version
+    - more info see [golangci-lint installation](https://golangci-lint.run/welcome/install/)
 
 ## dev tasks
 

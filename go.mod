@@ -1,6 +1,8 @@
 module github.com/bridgewwater/template-golang-lib
 
-go 1.20
+go 1.23
+
+toolchain go1.23.8
 
 require (
 	github.com/sebdah/goldie/v2 v2.5.5
