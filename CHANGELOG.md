@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [1.8.0](https://github.com/bridgewwater/template-golang-lib/compare/v1.7.2...v1.8.0) (2025-05-08)
+
+### ✨ Features
+
+* update Go version to 1.23.8 ([7eae06ac](https://github.com/bridgewwater/template-golang-lib/commit/7eae06ac11e3029d5471d46b10351940ccf01b8f))
+
 ## [1.7.2](https://github.com/bridgewwater/template-golang-lib/compare/1.7.1...v1.7.2) (2025-03-10)
 
 ### 📝 Documentation
