@@ -8,7 +8,7 @@ ROOT_NAME ?=template-golang-lib
 
 ## MakeDocker.mk settings start
 ROOT_OWNER ?=bridgewwater
-ROOT_PARENT_SWITCH_TAG =1.20.14
+ROOT_PARENT_SWITCH_TAG =1.23.8
 # for image local build
 INFO_TEST_BUILD_DOCKER_PARENT_IMAGE =golang
 # for image running
@@ -144,7 +144,7 @@ init:
 dep: go.mod.verify go.mod.download go.mod.tidy
 
 .PHONY: style
-style: go.mod.verify go.mod.tidy go.mod.fmt go.mod.lint.run
+style: go.mod.verify go.mod.tidy go.mod.fmt go.mod.lint.run.v2
 
 .PHONY: test
 test: test.go
