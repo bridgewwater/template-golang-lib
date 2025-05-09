@@ -4,6 +4,17 @@ on:
   push:
     tags:
       - '*' # Push events to matching *, i.e. 1.0.0 v1.0, v20.15.10
+    paths-ignore:
+      - '**/README.md'
+    branches:
+      # - 'main'
+  pull_request:
+    paths-ignore:
+      - '**/README.md'
+    types: # https://docs.github.com/actions/using-workflows/events-that-trigger-workflows#pull_request
+      # - opened
+      - reopened
+      - closed
 
 permissions:
   contents: write
@@ -39,5 +50,5 @@ jobs:
         with:
           token: ${{secrets.CODECOV_TOKEN}}
           files: coverage.txt
-          dry_run:  true
+#           dry_run:  true
 #          verbose: true
