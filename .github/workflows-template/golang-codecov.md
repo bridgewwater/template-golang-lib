@@ -45,10 +45,11 @@ jobs:
         run: go test -cover -coverprofile coverage.txt -covermode count -coverpkg ./... -tags test -v ./...
 
       - name: Codecov
-        uses: codecov/codecov-action@v3.1.4
+        uses: codecov/codecov-action@v5.4.2
         with:
           token: ${{secrets.CODECOV_TOKEN}}
           files: coverage.txt
+          dry_run:  true
 #          verbose: true
 
 ```
