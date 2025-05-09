@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [1.8.1](https://github.com/bridgewwater/template-golang-lib/compare/v1.8.0...v1.8.1) (2025-05-09)
+
+### 👷‍ Build System
+
+* update codecov workflow to ignore README.md changes ([d9ce202d](https://github.com/bridgewwater/template-golang-lib/commit/d9ce202d24fc8b2c311086aa3e963d93910bb04b))
+
+* update codecov action to v5.4.2 and add dry_run option ([54db483a](https://github.com/bridgewwater/template-golang-lib/commit/54db483acbace13e287340d3de7dcc970763e498))
+
 ## [1.8.0](https://github.com/bridgewwater/template-golang-lib/compare/v1.7.2...v1.8.0) (2025-05-08)
 
 ### ✨ Features
