@@ -42,9 +42,9 @@ jobs:
 
       - name: Check deploy inputs
         run: |
-          echo "prerelease: ${{inputs.prerelease}}"
-          echo "tag_name: ${{inputs.tag_name}}"
-          echo "download_artifact_name: ${{inputs.download_artifact_name}}"
+          echo "prerelease: ${{ inputs.prerelease }}"
+          echo "tag_name: ${{ inputs.tag_name }}"
+          echo "download_artifact_name: ${{ inputs.download_artifact_name }}"
 
       - name: Download Artifact
         uses: actions/download-artifact@v4
@@ -52,7 +52,7 @@ jobs:
         with:
           path: ${{ github.workspace }}/dist
           ## https://github.com/actions/download-artifact/tree/v4?tab=readme-ov-file#breaking-changes
-          pattern: ${{ inputs.download_artifact_name }}-${{inputs.tag_name}}*
+          pattern: ${{ inputs.download_artifact_name }}-${{ inputs.tag_name }}*
           merge-multiple: true
 
       - name: Display structure of downloaded files
@@ -64,10 +64,10 @@ jobs:
         name: Create Release
         if: ${{ ! inputs.dry_run }}
         with:
-          tag_name: ${{inputs.tag_name}}
+          tag_name: ${{ inputs.tag_name }}
           ## with permissions to create releases in the other repo
           token: "${{ secrets.GITHUB_TOKEN }}"
-          prerelease: ${{inputs.prerelease}}
+          prerelease: ${{ inputs.prerelease }}
           body: "${{ inputs.tag_changes }}"
           # body_path: ${{ github.workspace }}/CHANGELOG.md
           ## set release binaries, empty means do not upload files for release
