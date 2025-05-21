@@ -14,6 +14,17 @@ on:
   push:
     tags:
       - '*' # Push events to matching *, i.e. 1.0.0 v1.0, v20.15.10
+    paths-ignore:
+      - '**/README.md'
+    branches:
+    # - 'main'
+  pull_request:
+    paths-ignore:
+      - '**/README.md'
+    types: # https://docs.github.com/actions/using-workflows/events-that-trigger-workflows#pull_request
+      # - opened
+      - reopened
+      - closed
 
 permissions:
   contents: write
@@ -39,17 +50,18 @@ jobs:
           go version
 
       - name: Run go build
-        run: go build -v ./...
+        run: go build -v -tags test ./...
 
       - name: Run test coverage
-        run: go test -cover -coverprofile coverage.txt -covermode count -coverpkg ./... -tags test -v ./...
+        run: go test -cover -tags test -coverprofile coverage.txt -covermode count -coverpkg ./... -v ./...
 
       - name: Codecov
         uses: codecov/codecov-action@v5.4.2
         with:
-          token: ${{secrets.CODECOV_TOKEN}}
+          token: ${{ secrets.CODECOV_TOKEN }}
           files: coverage.txt
-          dry_run:  true
+#           dry_run:  true
 #          verbose: true
+
 
 ```

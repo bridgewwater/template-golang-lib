@@ -48,7 +48,7 @@ jobs:
       - name: Codecov
         uses: codecov/codecov-action@v5.4.2
         with:
-          token: ${{secrets.CODECOV_TOKEN}}
+          token: ${{ secrets.CODECOV_TOKEN }}
           files: coverage.txt
 #           dry_run:  true
 #          verbose: true
