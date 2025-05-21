@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [1.9.0](https://github.com/bridgewwater/template-golang-lib/compare/v1.8.2...v1.9.0) (2025-05-21)
+
+### ✨ Features
+
+* add input checks and ignore doc-dev changes ([f50a6c8a](https://github.com/bridgewwater/template-golang-lib/commit/f50a6c8a51fdac5a2541938cca9e9085996d6bfb))
+
 ## [1.8.2](https://github.com/bridgewwater/template-golang-lib/compare/v1.8.1...v1.8.2) (2025-05-21)
 
 ### 👷‍ Build System
