@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [1.8.2](https://github.com/bridgewwater/template-golang-lib/compare/v1.8.1...v1.8.2) (2025-05-21)
+
+### 👷‍ Build System
+
+* bump codecov/codecov-action from 5.4.2 to 5.4.3 ([38e083b4](https://github.com/bridgewwater/template-golang-lib/commit/38e083b4cd5cf4704ef25185738215786ae2752d))
+
+* update codecov workflow and template ([edd84e60](https://github.com/bridgewwater/template-golang-lib/commit/edd84e6009d28a50c2737230c1ef91e0b91ef16c))
+
 ## [1.8.1](https://github.com/bridgewwater/template-golang-lib/compare/v1.8.0...v1.8.1) (2025-05-09)
 
 ### 👷‍ Build System
