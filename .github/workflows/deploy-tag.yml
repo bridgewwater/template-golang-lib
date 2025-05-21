@@ -38,6 +38,13 @@ jobs:
     name: repo-release
     runs-on: ubuntu-latest
     steps:
+      - name: Check inputs
+        run: |
+          echo "inputs.dry_run: ${{ inputs.dry_run }}"
+          echo "inputs.prerelease: ${{ inputs.prerelease }}"
+          echo "inputs.tag_name: ${{ inputs.tag_name }}"
+          echo "inputs.download_artifact_name: ${{ inputs.download_artifact_name }}"
+
       - uses: actions/checkout@v4
 
       - name: Check deploy inputs
