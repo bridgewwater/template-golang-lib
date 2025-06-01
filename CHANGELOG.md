@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [1.9.1](https://github.com/bridgewwater/template-golang-lib/compare/v1.9.0...v1.9.1) (2025-06-01)
+
+### 👷‍ Build System
+
+* update Dependabot auto-merge workflow ([a10e16c0](https://github.com/bridgewwater/template-golang-lib/commit/a10e16c0234811bc54c3cc5d3a1d3eb431f44d6f))
+
 ## [1.9.0](https://github.com/bridgewwater/template-golang-lib/compare/v1.8.2...v1.9.0) (2025-05-21)
 
 ### ✨ Features
