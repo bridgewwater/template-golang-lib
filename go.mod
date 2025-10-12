@@ -5,7 +5,7 @@ go 1.23
 toolchain go1.23.8
 
 require (
-	github.com/sebdah/goldie/v2 v2.7.1
+	github.com/sebdah/goldie/v2 v2.8.0
 	github.com/sinlov-go/unittest-kit v1.2.1
 	github.com/stretchr/testify v1.11.1
 )
