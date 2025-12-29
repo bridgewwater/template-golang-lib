@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [1.9.2](https://github.com/bridgewwater/template-golang-lib/compare/v1.9.1...v1.9.2) (2025-12-29)
+
+### 👷‍ Build System
+
+* enable manual triggering for CI workflow ([685cac96](https://github.com/bridgewwater/template-golang-lib/commit/685cac966dd9d963873d05e7bf7ec49ba79694c6))
+
+* bump golangci/golangci-lint-action from 8 to 9 ([85c92adc](https://github.com/bridgewwater/template-golang-lib/commit/85c92adc41cf4f698542d3bb4ce7c7e7c844375b))
+
+* bump actions/checkout from 4 to 6 ([c74237be](https://github.com/bridgewwater/template-golang-lib/commit/c74237be3d94bb9430f0dd3e5862aa23304a26c7))
+
+* bump actions/download-artifact from 4 to 6 ([2ec9519d](https://github.com/bridgewwater/template-golang-lib/commit/2ec9519dd6a0b8948264083329d6250d128454e9))
+
+* bump actions/upload-artifact from 4 to 5 ([ce2fcfc2](https://github.com/bridgewwater/template-golang-lib/commit/ce2fcfc2f546b987e16c3f38a4052dd0a931aa36))
+
+* bump github.com/sebdah/goldie/v2 from 2.7.1 to 2.8.0 ([fb8a57a5](https://github.com/bridgewwater/template-golang-lib/commit/fb8a57a5095d1065fcef392030faee9a7dd4ebb1))
+
+* bump codecov/codecov-action from 5.4.3 to 5.5.1 ([8e6ebde3](https://github.com/bridgewwater/template-golang-lib/commit/8e6ebde3a3f7fd9bf3fd304173c62ea3e0187b26))
+
+* bump github.com/stretchr/testify from 1.10.0 to 1.11.1 ([4d30896e](https://github.com/bridgewwater/template-golang-lib/commit/4d30896eb240e884ae270290b8ae0c953fb7b6c0))
+
+* bump github.com/sebdah/goldie/v2 from 2.5.5 to 2.7.1 ([efc109aa](https://github.com/bridgewwater/template-golang-lib/commit/efc109aa8417f48a41cdba540a5f0e254e0b5983))
+
 ## [1.9.1](https://github.com/bridgewwater/template-golang-lib/compare/v1.9.0...v1.9.1) (2025-06-01)
 
 ### 👷‍ Build System
