@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [1.9.3](https://github.com/bridgewwater/template-golang-lib/compare/v1.9.2...v1.9.3) (2026-06-01)
+
+### 👷‍ Build System
+
+* bump codecov/codecov-action from 6.0.0 to 6.0.1 ([f3a6078d](https://github.com/bridgewwater/template-golang-lib/commit/f3a6078d6df580a49f69ec2c9017ad8a02f2def9))
+
+* bump dependabot/fetch-metadata from 2 to 3 ([ae05dc85](https://github.com/bridgewwater/template-golang-lib/commit/ae05dc85acd5d1082677ce84387612e04b9a0961))
+
+* bump softprops/action-gh-release from 2 to 3 ([3c2d042e](https://github.com/bridgewwater/template-golang-lib/commit/3c2d042e71c20535613f5e6efa23a70cecb60582))
+
+* bump codecov/codecov-action from 5.5.2 to 6.0.0 ([d1171afd](https://github.com/bridgewwater/template-golang-lib/commit/d1171afdcd55bc2b32df71704075f5899568fe2f))
+
+* bump actions/upload-artifact from 5 to 7 ([2a09abd3](https://github.com/bridgewwater/template-golang-lib/commit/2a09abd3853f70c141ddb853a5d828a8ebcd6d7c))
+
+* bump actions/download-artifact from 6 to 8 ([fe097c30](https://github.com/bridgewwater/template-golang-lib/commit/fe097c30e0ba91716a87a64d03c4d388c10cb30a))
+
+* bump codecov/codecov-action from 5.5.1 to 5.5.2 ([31eb1c27](https://github.com/bridgewwater/template-golang-lib/commit/31eb1c279e165c4feed232b646352a67ada25b82))
+
 ## [1.9.2](https://github.com/bridgewwater/template-golang-lib/compare/v1.9.1...v1.9.2) (2025-12-29)
 
 ### 👷‍ Build System
