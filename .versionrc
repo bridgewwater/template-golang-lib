@@ -12,5 +12,7 @@
     {"type": "chore", "section":"📦 Chores", "hidden": true},
     {"type": "revert", "section":"⏪ Reverts", "hidden": false}
   ],
-  "tag-prefix": "v"
+  "tag-prefix": "v",
+  "monorepo-pkg-path": [],
+  "branch-check": ["main"]
 }
