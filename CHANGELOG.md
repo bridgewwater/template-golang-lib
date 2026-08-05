@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [1.9.4](https://github.com/bridgewwater/template-golang-lib/compare/v1.9.3...v1.9.4) (2026-08-06)
+
+### 📝 Documentation
+
+* update .versionrc configuration ([8f581b82](https://github.com/bridgewwater/template-golang-lib/commit/8f581b82d3da42ead9b8c3fd41e03a4cc7936288))
+
+### 👷‍ Build System
+
+* bump actions/setup-go from 6 to 7 ([083d318a](https://github.com/bridgewwater/template-golang-lib/commit/083d318a0a4f66126f2e802ef41fdb00fe3e4480))
+
+* bump actions/checkout from 6 to 7 ([b8f3bae7](https://github.com/bridgewwater/template-golang-lib/commit/b8f3bae7219b343f084250debb249414785524be))
+
+* bump convention-change/conventional-version-check ([854bece9](https://github.com/bridgewwater/template-golang-lib/commit/854bece9e4abc0d83b87c07c7d3fae246b702242))
+
+* bump codecov/codecov-action from 6.0.1 to 7.0.0 ([95b23590](https://github.com/bridgewwater/template-golang-lib/commit/95b23590444dd3e536bb41722f5c460ac9cb39c8))
+
 ## [1.9.3](https://github.com/bridgewwater/template-golang-lib/compare/v1.9.2...v1.9.3) (2026-06-01)
 
 ### 👷‍ Build System
